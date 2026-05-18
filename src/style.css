@@ -1,0 +1,13 @@
+:root{
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --color-text-primary:#0b1220;
+  --color-text-secondary:#6b7280;
+  --color-text-tertiary:#9ca3af;
+  --color-text-info:#0f6ef0;
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#f7f7f9;
+  --color-border-tertiary:#e5e7eb;
+  --border-radius-md:8px;
+  --border-radius-lg:12px;
+}
+body{margin:0;padding:20px;background:var(--color-background-primary);}

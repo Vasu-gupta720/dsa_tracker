@@ -137,6 +137,69 @@ const ALL_SECTIONS = [
       { id: "mq9",  title: "Kth Smallest in Row-Column Sorted Matrix",           link: "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",                   important: true,  diff: "M" },
       { id: "mq10", title: "Common Elements in All Rows of Matrix",              link: "https://www.geeksforgeeks.org/common-elements-in-all-rows-of-a-given-matrix/",             important: false, diff: "M" },
     ]
+  },
+  {
+    id: "sw1", title: "Sliding Window — Phase 1: Fixed Window Basics", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "sw1q1", title: "Maximum Average Subarray I",                  link: "https://leetcode.com/problems/maximum-average-subarray-i/",                       important: true,  diff: "E", pattern: "Fixed window" },
+      { id: "sw1q2", title: "Find K-Beauty of a Number",                   link: "https://leetcode.com/problems/find-the-k-beauty-of-a-number/",                    important: false, diff: "E", pattern: "Fixed window" },
+      { id: "sw1q3", title: "Substrings of Size Three with Distinct Chars",link: "https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/",important: false, diff: "E", pattern: "Fixed window" },
+      { id: "sw1q4", title: "Sliding Window Maximum",                      link: "https://leetcode.com/problems/sliding-window-maximum/",                           important: true,  diff: "H", pattern: "Monotonic deque" },
+    ]
+  },
+  {
+    id: "sw2", title: "Sliding Window — Phase 2: Variable Window Basics", color: "#0F6E56", bg: "#E1F5EE",
+    questions: [
+      { id: "sw2q1", title: "Longest Substring Without Repeating Characters", link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/", important: true, diff: "M", pattern: "Variable window + hashmap" },
+      { id: "sw2q2", title: "Maximum Consecutive Ones III",                   link: "https://leetcode.com/problems/max-consecutive-ones-iii/",                       important: true, diff: "M", pattern: "Variable window" },
+      { id: "sw2q3", title: "Fruit Into Baskets",                             link: "https://leetcode.com/problems/fruit-into-baskets/",                             important: true, diff: "M", pattern: "At most K distinct" },
+      { id: "sw2q4", title: "Longest Repeating Character Replacement",        link: "https://leetcode.com/problems/longest-repeating-character-replacement/",        important: true, diff: "M", pattern: "Variable window + frequency" },
+    ]
+  },
+  {
+    id: "sw3", title: "Sliding Window — Phase 3: At Most K Distinct Pattern", color: "#534AB7", bg: "#EEEDFE",
+    questions: [
+      { id: "sw3q1", title: "Longest Substring with At Most K Distinct Characters", link: "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/", important: true, diff: "M", pattern: "At most K distinct" },
+      { id: "sw3q2", title: "Subarrays with K Different Integers",                  link: "https://leetcode.com/problems/subarrays-with-k-different-integers/",                   important: true, diff: "H", pattern: "Exact K = atMost(K) - atMost(K-1)" },
+    ]
+  },
+  {
+    id: "sw4", title: "Sliding Window — Phase 4: Minimum Window Type", color: "#993C1D", bg: "#FAECE7",
+    questions: [
+      { id: "sw4q1", title: "Minimum Size Subarray Sum",  link: "https://leetcode.com/problems/minimum-size-subarray-sum/",  important: true, diff: "M", pattern: "Shrinking window" },
+      { id: "sw4q2", title: "Minimum Window Substring",   link: "https://leetcode.com/problems/minimum-window-substring/",   important: true, diff: "H", pattern: "Shrinking window + frequency map" },
+    ]
+  },
+  {
+    id: "sw5", title: "Sliding Window — Phase 5: Anagram Window", color: "#854F0B", bg: "#FAEEDA",
+    questions: [
+      { id: "sw5q1", title: "Permutation in String",       link: "https://leetcode.com/problems/permutation-in-string/",       important: true, diff: "M", pattern: "Fixed window + frequency" },
+      { id: "sw5q2", title: "Find All Anagrams in a String",link: "https://leetcode.com/problems/find-all-anagrams-in-a-string/",important: true, diff: "M", pattern: "Fixed window + frequency" },
+    ]
+  },
+  {
+    id: "sw6", title: "Sliding Window — Phase 6: Prefix Sum + Window Hybrid", color: "#993556", bg: "#FBEAF0",
+    questions: [
+      { id: "sw6q1", title: "Binary Subarrays With Sum",       link: "https://leetcode.com/problems/binary-subarrays-with-sum/",       important: true, diff: "M", pattern: "Exact K = atMost(K) - atMost(K-1)" },
+      { id: "sw6q2", title: "Count Number of Nice Subarrays",  link: "https://leetcode.com/problems/count-number-of-nice-subarrays/",  important: true, diff: "M", pattern: "Exact K pattern" },
+      { id: "sw6q3", title: "Subarray Product Less Than K",    link: "https://leetcode.com/problems/subarray-product-less-than-k/",    important: true, diff: "M", pattern: "Variable window (product)" },
+    ]
+  },
+  {
+    id: "sw7", title: "Sliding Window — Phase 7: Advanced", color: "#3B6D11", bg: "#EAF3DE",
+    questions: [
+      { id: "sw7q1", title: "Maximum Points You Can Obtain from Cards", link: "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",   important: true, diff: "M", pattern: "Reverse fixed window" },
+      { id: "sw7q2", title: "Frequency of Most Frequent Element",       link: "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",    important: true, diff: "M", pattern: "Sorting + sliding window" },
+      { id: "sw7q3", title: "Take K of Each Character From Left & Right",link: "https://leetcode.com/problems/take-k-of-each-character-from-left-and-right/",important: true, diff: "M", pattern: "Reverse window" },
+    ]
+  },
+  {
+    id: "sw8", title: "Sliding Window — Phase 8: Hard / Top Company", color: "#A32D2D", bg: "#FCEBEB",
+    questions: [
+      { id: "sw8q1", title: "Sliding Window Median",                     link: "https://leetcode.com/problems/sliding-window-median/",                    important: true, diff: "H", pattern: "Fixed window + two heaps" },
+      { id: "sw8q2", title: "Minimum Operations to Reduce X to Zero",    link: "https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/",  important: true, diff: "M", pattern: "Complement max window" },
+      { id: "sw8q3", title: "Count Vowel Substrings of a String",        link: "https://leetcode.com/problems/count-vowel-substrings-of-a-string/",       important: false, diff: "E", pattern: "Variable window + set" },
+    ]
   }
 ];
 
@@ -339,6 +402,15 @@ export default function DSATracker() {
                       }}>⭐ IMP</span>
                     )}
                   </div>
+
+                  {/* Pattern tag */}
+                  {q.pattern && (
+                    <div style={{ marginTop: 4 }}>
+                      <span style={{ fontSize: 10.5, color: "#534AB7", background: "#EEEDFE", border: "1px solid #b5b0f5", borderRadius: 4, padding: "1px 7px", fontWeight: 500 }}>
+                        ⚙ {q.pattern}
+                      </span>
+                    </div>
+                  )}
 
                   {notes[q.id] && (
                     <div style={{ marginTop: 4, fontSize: 12, color: "var(--color-text-secondary)", background: "var(--color-background-secondary)", borderRadius: 4, padding: "4px 8px", borderLeft: "2px solid var(--color-border-info)" }}>

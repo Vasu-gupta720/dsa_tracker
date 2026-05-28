@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from "./contexts/AuthContext";
+import { getUserProgress, saveUserProgress } from "./services/firestoreService";
 
 const DIFF = {
   E: { label: "Easy",   bg: "#EAF3DE", color: "#3B6D11", border: "#97C459" },
@@ -216,6 +218,7 @@ function DiffBadge({ d }) {
 }
 
 export default function DSATracker() {
+  const { user } = useAuth();
   const [checked, setChecked]       = useState({});
   const [notes, setNotes]           = useState({});
   const [openNote, setOpenNote]     = useState(null);
@@ -226,23 +229,29 @@ export default function DSATracker() {
   const [loaded, setLoaded]         = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Load progress from Firestore on mount
   useEffect(() => {
+    if (!user) return;
     (async () => {
       try {
-        const c = window.localStorage.getItem("dsa-checked");
-        const n = window.localStorage.getItem("dsa-notes");
-        if (c) setChecked(JSON.parse(c));
-        if (n) setNotes(JSON.parse(n));
-      } catch {}
+        const data = await getUserProgress(user.uid);
+        setChecked(data.checked);
+        setNotes(data.notes);
+      } catch (err) {
+        // Firestore read failed — start with empty state
+      }
       setLoaded(true);
     })();
-  }, []);
+  }, [user]);
 
+  // Save progress to Firestore
   const save = async (nc, nn) => {
+    if (!user) return;
     try {
-      window.localStorage.setItem("dsa-checked", JSON.stringify(nc));
-      window.localStorage.setItem("dsa-notes",   JSON.stringify(nn));
-    } catch {}
+      await saveUserProgress(user.uid, nc, nn);
+    } catch (err) {
+      // Firestore write failed — data is still updated in local state
+    }
   };
 
   const toggle = (id) => {

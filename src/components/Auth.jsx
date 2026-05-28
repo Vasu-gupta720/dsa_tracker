@@ -165,5 +165,5 @@ function friendlyError(code) {
     "auth/network-request-failed": "Network error. Check your connection.",
     "auth/popup-blocked": "Popup was blocked. Please allow popups and try again.",
   };
-  return map[code] || "Something went wrong. Please try again.";
+  return map[code] || `Something went wrong (${code || "unknown"}). Please try again.`;
 }

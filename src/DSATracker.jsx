@@ -10,7 +10,7 @@ const DIFF = {
 
 const ALL_SECTIONS = [
   {
-    id: "phase1", title: "Phase 1 — Basics", color: "#3B6D11", bg: "#EAF3DE",
+    id: "phase1", topic: "arrays", title: "Phase 1 — Basics", color: "#3B6D11", bg: "#EAF3DE",
     questions: [
       { id: "p1q1",  title: "Largest Element in Array",               link: "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1",           important: false, diff: "E" },
       { id: "p1q2",  title: "Second Largest Element",                  link: "https://www.geeksforgeeks.org/problems/second-largest3735/1",                     important: false, diff: "E" },
@@ -25,7 +25,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "phase2", title: "Phase 2 — Core Interview Questions", color: "#185FA5", bg: "#E6F1FB",
+    id: "phase2", topic: "arrays", title: "Phase 2 — Core Interview Questions", color: "#185FA5", bg: "#E6F1FB",
     questions: [
       { id: "p2q1",  title: "Single Number",                           link: "https://leetcode.com/problems/single-number/",                                   important: true,  diff: "E" },
       { id: "p2q2",  title: "Two Sum",                                 link: "https://leetcode.com/problems/two-sum/",                                         important: true,  diff: "E" },
@@ -40,7 +40,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "phase3", title: "Phase 3 — Matrix Problems", color: "#854F0B", bg: "#FAEEDA",
+    id: "phase3", topic: "arrays", title: "Phase 3 — Matrix Problems", color: "#854F0B", bg: "#FAEEDA",
     questions: [
       { id: "p3q1", title: "Set Matrix Zeroes",   link: "https://leetcode.com/problems/set-matrix-zeroes/", important: true,  diff: "M" },
       { id: "p3q2", title: "Rotate Image (90°)",  link: "https://leetcode.com/problems/rotate-image/",      important: true,  diff: "M" },
@@ -49,7 +49,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "phase4", title: "Phase 4 — Prefix Sum + Hashing", color: "#534AB7", bg: "#EEEDFE",
+    id: "phase4", topic: "arrays", title: "Phase 4 — Prefix Sum + Hashing", color: "#534AB7", bg: "#EEEDFE",
     questions: [
       { id: "p4q1", title: "Longest Subarray with Sum K (Positive)", link: "https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1", important: true, diff: "M" },
       { id: "p4q2", title: "Subarray Sum Equals K",                  link: "https://leetcode.com/problems/subarray-sum-equals-k/",                    important: true, diff: "M" },
@@ -57,7 +57,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "phase5", title: "Phase 5 — Medium / Hard (Important)", color: "#993C1D", bg: "#FAECE7",
+    id: "phase5", topic: "arrays", title: "Phase 5 — Medium / Hard (Important)", color: "#993C1D", bg: "#FAECE7",
     questions: [
       { id: "p5q1", title: "Majority Element II (n/3 times)",     link: "https://leetcode.com/problems/majority-element-ii/",                       important: true, diff: "M" },
       { id: "p5q2", title: "3Sum",                                 link: "https://leetcode.com/problems/3sum/",                                     important: true, diff: "M" },
@@ -70,7 +70,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "phase6", title: "Phase 6 — Sliding Window / Advanced", color: "#0F6E56", bg: "#E1F5EE",
+    id: "phase6", topic: "arrays", title: "Phase 6 — Sliding Window / Advanced", color: "#0F6E56", bg: "#E1F5EE",
     questions: [
       { id: "p6q1", title: "Maximum Product Subarray",  link: "https://leetcode.com/problems/maximum-product-subarray/",                 important: true,  diff: "M" },
       { id: "p6q2", title: "Sliding Window Maximum",    link: "https://leetcode.com/problems/sliding-window-maximum/",                   important: true,  diff: "H" },
@@ -78,7 +78,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "phase7", title: "Phase 7 — Famous Hard Problems", color: "#A32D2D", bg: "#FCEBEB",
+    id: "phase7", topic: "arrays", title: "Phase 7 — Famous Hard Problems", color: "#A32D2D", bg: "#FCEBEB",
     questions: [
       { id: "p7q1", title: "Trapping Rain Water",           link: "https://leetcode.com/problems/trapping-rain-water/",          important: true, diff: "H" },
       { id: "p7q2", title: "Container With Most Water",     link: "https://leetcode.com/problems/container-with-most-water/",    important: true, diff: "M" },
@@ -90,7 +90,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "array_extra", title: "Arrays — Extra Must-Know", color: "#5F5E5A", bg: "#F1EFE8",
+    id: "array_extra", topic: "arrays", title: "Arrays — Extra Must-Know", color: "#5F5E5A", bg: "#F1EFE8",
     questions: [
       { id: "aeq1",  title: "Reverse an Array / String",                      link: "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/",                    important: false, diff: "E" },
       { id: "aeq2",  title: "Find Max and Min in Array",                       link: "https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/",                                 important: false, diff: "E" },
@@ -126,7 +126,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "matrix", title: "Matrix Problems", color: "#993556", bg: "#FBEAF0",
+    id: "matrix", topic: "arrays", title: "Matrix Problems", color: "#993556", bg: "#FBEAF0",
     questions: [
       { id: "mq1",  title: "Spiral Traversal on a Matrix",                       link: "https://leetcode.com/problems/spiral-matrix/",                                               important: true,  diff: "M" },
       { id: "mq2",  title: "Search an Element in a Matrix",                      link: "https://leetcode.com/problems/search-a-2d-matrix/",                                         important: true,  diff: "M" },
@@ -141,7 +141,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "sw1", title: "Sliding Window — Phase 1: Fixed Window Basics", color: "#185FA5", bg: "#E6F1FB",
+    id: "sw1", topic: "sw", title: "Sliding Window — Phase 1: Fixed Window Basics", color: "#185FA5", bg: "#E6F1FB",
     questions: [
       { id: "sw1q1", title: "Maximum Average Subarray I",                  link: "https://leetcode.com/problems/maximum-average-subarray-i/",                       important: true,  diff: "E", pattern: "Fixed window" },
       { id: "sw1q2", title: "Find K-Beauty of a Number",                   link: "https://leetcode.com/problems/find-the-k-beauty-of-a-number/",                    important: false, diff: "E", pattern: "Fixed window" },
@@ -150,7 +150,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "sw2", title: "Sliding Window — Phase 2: Variable Window Basics", color: "#0F6E56", bg: "#E1F5EE",
+    id: "sw2", topic: "sw", title: "Sliding Window — Phase 2: Variable Window Basics", color: "#0F6E56", bg: "#E1F5EE",
     questions: [
       { id: "sw2q1", title: "Longest Substring Without Repeating Characters", link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/", important: true, diff: "M", pattern: "Variable window + hashmap" },
       { id: "sw2q2", title: "Maximum Consecutive Ones III",                   link: "https://leetcode.com/problems/max-consecutive-ones-iii/",                       important: true, diff: "M", pattern: "Variable window" },
@@ -159,28 +159,28 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "sw3", title: "Sliding Window — Phase 3: At Most K Distinct Pattern", color: "#534AB7", bg: "#EEEDFE",
+    id: "sw3", topic: "sw", title: "Sliding Window — Phase 3: At Most K Distinct Pattern", color: "#534AB7", bg: "#EEEDFE",
     questions: [
       { id: "sw3q1", title: "Longest Substring with At Most K Distinct Characters", link: "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/", important: true, diff: "M", pattern: "At most K distinct" },
       { id: "sw3q2", title: "Subarrays with K Different Integers",                  link: "https://leetcode.com/problems/subarrays-with-k-different-integers/",                   important: true, diff: "H", pattern: "Exact K = atMost(K) - atMost(K-1)" },
     ]
   },
   {
-    id: "sw4", title: "Sliding Window — Phase 4: Minimum Window Type", color: "#993C1D", bg: "#FAECE7",
+    id: "sw4", topic: "sw", title: "Sliding Window — Phase 4: Minimum Window Type", color: "#993C1D", bg: "#FAECE7",
     questions: [
       { id: "sw4q1", title: "Minimum Size Subarray Sum",  link: "https://leetcode.com/problems/minimum-size-subarray-sum/",  important: true, diff: "M", pattern: "Shrinking window" },
       { id: "sw4q2", title: "Minimum Window Substring",   link: "https://leetcode.com/problems/minimum-window-substring/",   important: true, diff: "H", pattern: "Shrinking window + frequency map" },
     ]
   },
   {
-    id: "sw5", title: "Sliding Window — Phase 5: Anagram Window", color: "#854F0B", bg: "#FAEEDA",
+    id: "sw5", topic: "sw", title: "Sliding Window — Phase 5: Anagram Window", color: "#854F0B", bg: "#FAEEDA",
     questions: [
       { id: "sw5q1", title: "Permutation in String",       link: "https://leetcode.com/problems/permutation-in-string/",       important: true, diff: "M", pattern: "Fixed window + frequency" },
       { id: "sw5q2", title: "Find All Anagrams in a String",link: "https://leetcode.com/problems/find-all-anagrams-in-a-string/",important: true, diff: "M", pattern: "Fixed window + frequency" },
     ]
   },
   {
-    id: "sw6", title: "Sliding Window — Phase 6: Prefix Sum + Window Hybrid", color: "#993556", bg: "#FBEAF0",
+    id: "sw6", topic: "sw", title: "Sliding Window — Phase 6: Prefix Sum + Window Hybrid", color: "#993556", bg: "#FBEAF0",
     questions: [
       { id: "sw6q1", title: "Binary Subarrays With Sum",       link: "https://leetcode.com/problems/binary-subarrays-with-sum/",       important: true, diff: "M", pattern: "Exact K = atMost(K) - atMost(K-1)" },
       { id: "sw6q2", title: "Count Number of Nice Subarrays",  link: "https://leetcode.com/problems/count-number-of-nice-subarrays/",  important: true, diff: "M", pattern: "Exact K pattern" },
@@ -188,7 +188,7 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "sw7", title: "Sliding Window — Phase 7: Advanced", color: "#3B6D11", bg: "#EAF3DE",
+    id: "sw7", topic: "sw", title: "Sliding Window — Phase 7: Advanced", color: "#3B6D11", bg: "#EAF3DE",
     questions: [
       { id: "sw7q1", title: "Maximum Points You Can Obtain from Cards", link: "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",   important: true, diff: "M", pattern: "Reverse fixed window" },
       { id: "sw7q2", title: "Frequency of Most Frequent Element",       link: "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",    important: true, diff: "M", pattern: "Sorting + sliding window" },
@@ -196,11 +196,69 @@ const ALL_SECTIONS = [
     ]
   },
   {
-    id: "sw8", title: "Sliding Window — Phase 8: Hard / Top Company", color: "#A32D2D", bg: "#FCEBEB",
+    id: "sw8", topic: "sw", title: "Sliding Window — Phase 8: Hard / Top Company", color: "#A32D2D", bg: "#FCEBEB",
     questions: [
       { id: "sw8q1", title: "Sliding Window Median",                     link: "https://leetcode.com/problems/sliding-window-median/",                    important: true, diff: "H", pattern: "Fixed window + two heaps" },
       { id: "sw8q2", title: "Minimum Operations to Reduce X to Zero",    link: "https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/",  important: true, diff: "M", pattern: "Complement max window" },
       { id: "sw8q3", title: "Count Vowel Substrings of a String",        link: "https://leetcode.com/problems/count-vowel-substrings-of-a-string/",       important: false, diff: "E", pattern: "Variable window + set" },
+    ]
+  },
+  {
+    id: "ps1", topic: "ps", title: "Prefix Sum — Level 1: Fundamentals", color: "#3B6D11", bg: "#EAF3DE",
+    questions: [
+      { id: "ps1q1", title: "Range Sum Query - Immutable (LC 303)",  link: "https://leetcode.com/problems/range-sum-query-immutable/", important: false, diff: "E", pattern: "Basic prefix sum" },
+      { id: "ps1q2", title: "Find Pivot Index (LC 724)",             link: "https://leetcode.com/problems/find-pivot-index/",          important: true,  diff: "E", pattern: "Left sum = right sum" },
+    ]
+  },
+  {
+    id: "ps2", topic: "ps", title: "Prefix Sum — Level 2: Core + HashMap", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "ps2q1", title: "Subarray Sum Equals K (LC 560)",             link: "https://leetcode.com/problems/subarray-sum-equals-k/",                                    important: true, diff: "M", pattern: "prefixSum - k in hashmap" },
+      { id: "ps2q2", title: "Longest Subarray with Sum K (GFG)",          link: "https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1",               important: true, diff: "M", pattern: "Store first occurrence" },
+      { id: "ps2q3", title: "Maximum Size Subarray Sum Equals K (LC 325)", link: "https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/",                      important: true, diff: "M", pattern: "prefixSum - k (longest)" },
+    ]
+  },
+  {
+    id: "ps3", topic: "ps", title: "Prefix Sum — Level 3: Zero Sum Pattern", color: "#534AB7", bg: "#EEEDFE",
+    questions: [
+      { id: "ps3q1", title: "Largest Subarray with 0 Sum (GFG)", link: "https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1",  important: true,  diff: "M", pattern: "prefixSum seen before → 0 sum" },
+      { id: "ps3q2", title: "Zero Sum Subarrays — Count (GFG)",  link: "https://www.geeksforgeeks.org/problems/zero-sum-subarrays1825/1",       important: false, diff: "M", pattern: "Count occurrences of prefixSum" },
+    ]
+  },
+  {
+    id: "ps4", topic: "ps", title: "Prefix Sum — Level 4: Modulo Pattern", color: "#854F0B", bg: "#FAEEDA",
+    questions: [
+      { id: "ps4q1", title: "Continuous Subarray Sum (LC 523)",     link: "https://leetcode.com/problems/continuous-subarray-sum/",       important: true, diff: "M", pattern: "prefix % k" },
+      { id: "ps4q2", title: "Subarray Sums Divisible by K (LC 974)", link: "https://leetcode.com/problems/subarray-sums-divisible-by-k/", important: true, diff: "M", pattern: "prefix % k — count" },
+      { id: "ps4q3", title: "Make Sum Divisible by P (LC 1590)",    link: "https://leetcode.com/problems/make-sum-divisible-by-p/",       important: true, diff: "H", pattern: "prefix % p — advanced" },
+    ]
+  },
+  {
+    id: "ps5", topic: "ps", title: "Prefix Sum — Level 5: Binary Array Transforms", color: "#0F6E56", bg: "#E1F5EE",
+    questions: [
+      { id: "ps5q1", title: "Binary Subarrays With Sum (LC 930)",              link: "https://leetcode.com/problems/binary-subarrays-with-sum/",       important: true, diff: "M", pattern: "Exact K via atMost(K) - atMost(K-1)" },
+      { id: "ps5q2", title: "Count Number of Nice Subarrays (LC 1248)",        link: "https://leetcode.com/problems/count-number-of-nice-subarrays/",  important: true, diff: "M", pattern: "Same as LC 930" },
+      { id: "ps5q3", title: "Contiguous Array — Equal 0s and 1s (LC 525)",     link: "https://leetcode.com/problems/contiguous-array/",               important: true, diff: "M", pattern: "0 → -1, 1 → +1 transform" },
+    ]
+  },
+  {
+    id: "ps6", topic: "ps", title: "Prefix Sum — Level 6: Prefix XOR", color: "#993556", bg: "#FBEAF0",
+    questions: [
+      { id: "ps6q1", title: "XOR Queries of a Subarray (LC 1310)",                          link: "https://leetcode.com/problems/xor-queries-of-a-subarray/",                        important: false, diff: "M", pattern: "Prefix XOR array" },
+      { id: "ps6q2", title: "Count Triplets — Two Arrays of Equal XOR (LC 1442)",           link: "https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/", important: true, diff: "M", pattern: "Prefix XOR + math" },
+    ]
+  },
+  {
+    id: "ps7", topic: "ps", title: "Prefix Sum — Level 7: Advanced Prefix + Bitmask", color: "#A32D2D", bg: "#FCEBEB",
+    questions: [
+      { id: "ps7q1", title: "Number of Wonderful Substrings (LC 1915)", link: "https://leetcode.com/problems/number-of-wonderful-substrings/", important: true, diff: "H", pattern: "Bitmask + prefix XOR" },
+    ]
+  },
+  {
+    id: "ps8", topic: "ps", title: "Prefix Sum — Level 8: 2D Prefix Sum", color: "#993C1D", bg: "#FAECE7",
+    questions: [
+      { id: "ps8q1", title: "Range Sum Query 2D - Immutable (LC 304)", link: "https://leetcode.com/problems/range-sum-query-2d-immutable/", important: true,  diff: "M", pattern: "2D prefix sum" },
+      { id: "ps8q2", title: "Matrix Block Sum (LC 1314)",               link: "https://leetcode.com/problems/matrix-block-sum/",            important: false, diff: "M", pattern: "2D prefix sum window" },
     ]
   }
 ];
@@ -225,6 +283,7 @@ export default function DSATracker() {
   const [noteText, setNoteText]     = useState("");
   const [filter, setFilter]         = useState("all");
   const [diffFilter, setDiffFilter] = useState("all");
+  const [topicFilter, setTopicFilter] = useState("all");
   const [collapsed, setCollapsed]   = useState({});
   const [loaded, setLoaded]         = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -289,7 +348,7 @@ export default function DSATracker() {
       const ms = !searchQuery || q.title.toLowerCase().includes(searchQuery.toLowerCase());
       return mf && md && ms;
     })
-  })).filter(s => s.questions.length > 0);
+  })).filter(s => s.questions.length > 0 && (topicFilter === "all" || s.topic === topicFilter));
 
   if (!loaded) return <div style={{ padding: "2rem", textAlign: "center", color: "var(--color-text-secondary)" }}>Loading...</div>;
 
@@ -318,6 +377,21 @@ export default function DSATracker() {
         </div>
       </div>
 
+      {/* Topic filter */}
+      <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
+        {[["all","📚 All Topics"], ["arrays","🔢 Arrays & Matrix"], ["sw","🪟 Sliding Window"], ["ps","➕ Prefix Sum"]].map(([val, label]) => (
+          <button key={val} onClick={() => setTopicFilter(val)} style={{
+            fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
+            border: "1.5px solid",
+            borderColor: topicFilter === val ? "#534AB7" : "#ccc",
+            background: topicFilter === val ? "#EEEDFE" : "var(--color-background-primary)",
+            color: topicFilter === val ? "#534AB7" : "var(--color-text-secondary)",
+            fontWeight: topicFilter === val ? 600 : 400
+          }}>{label}</button>
+        ))}
+      </div>
+
+      {/* Search */}
       <input
         type="text"
         placeholder="Search questions..."

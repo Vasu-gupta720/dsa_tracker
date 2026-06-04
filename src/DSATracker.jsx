@@ -412,6 +412,14 @@ function DiffBadge({ d }) {
   );
 }
 
+const TOPIC_META = {
+  arrays: { label: "Arrays & Matrix",  emoji: "🔢", accent: "#185FA5", bg: "#E6F1FB", border: "#93c5fd" },
+  sw:     { label: "Sliding Window",   emoji: "🪟", accent: "#0F6E56", bg: "#E1F5EE", border: "#6ee7b7" },
+  ps:     { label: "Prefix Sum",       emoji: "➕", accent: "#6D28D9", bg: "#EDE9FE", border: "#c4b5fd" },
+  bs:     { label: "Binary Search",    emoji: "🔍", accent: "#B45309", bg: "#FEF3C7", border: "#fcd34d" },
+  rb:     { label: "Recursion & BT",   emoji: "🔄", accent: "#9D174D", bg: "#FCE7F3", border: "#f9a8d4" },
+};
+
 export default function DSATracker() {
   const { user } = useAuth();
   const [checked, setChecked]       = useState({});
@@ -516,15 +524,32 @@ export default function DSATracker() {
 
       {/* Topic filter */}
       <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
-        {[["all","📚 All Topics"], ["arrays","🔢 Arrays & Matrix"], ["sw","🪟 Sliding Window"], ["ps","➕ Prefix Sum"], ["bs","🔍 Binary Search"], ["rb","🔄 Recursion & BT"]].map(([val, label]) => (
-          <button key={val} onClick={() => setTopicFilter(val)} style={{
+        <button
+          onClick={() => setTopicFilter("all")}
+          style={{
             fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
             border: "1.5px solid",
-            borderColor: topicFilter === val ? "#534AB7" : "#ccc",
-            background: topicFilter === val ? "#EEEDFE" : "var(--color-background-primary)",
-            color: topicFilter === val ? "#534AB7" : "var(--color-text-secondary)",
-            fontWeight: topicFilter === val ? 600 : 400
-          }}>{label}</button>
+            borderColor: topicFilter === "all" ? "#374151" : "#d1d5db",
+            background: topicFilter === "all" ? "#111827" : "var(--color-background-primary)",
+            color: topicFilter === "all" ? "#fff" : "var(--color-text-secondary)",
+            fontWeight: topicFilter === "all" ? 600 : 400,
+          }}
+        >📚 All Topics</button>
+        {Object.entries(TOPIC_META).map(([val, meta]) => (
+          <button
+            key={val}
+            onClick={() => setTopicFilter(val)}
+            style={{
+              fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
+              border: "1.5px solid",
+              borderColor: topicFilter === val ? meta.accent : "#d1d5db",
+              background: topicFilter === val ? meta.bg : "var(--color-background-primary)",
+              color: topicFilter === val ? meta.accent : "var(--color-text-secondary)",
+              fontWeight: topicFilter === val ? 700 : 400,
+              boxShadow: topicFilter === val ? `0 0 0 2px ${meta.border}` : "none",
+              transition: "all 0.15s",
+            }}
+          >{meta.emoji} {meta.label}</button>
         ))}
       </div>
 
@@ -566,98 +591,165 @@ export default function DSATracker() {
         })}
       </div>
 
-      {filteredSections.map(sec => {
-        const secDone = sec.questions.filter(q => checked[q.id]).length;
-        const isCollapsed = collapsed[sec.id];
-        return (
-          <div key={sec.id} style={{ marginBottom: "1rem", border: "0.5px solid var(--color-border-tertiary)", borderRadius: "var(--border-radius-lg)", overflow: "hidden" }}>
-            <div
-              onClick={() => setCollapsed(c => ({ ...c, [sec.id]: !c[sec.id] }))}
-              style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", background: sec.bg, cursor: "pointer", userSelect: "none" }}
-            >
-              <span style={{ fontWeight: 500, fontSize: 14, color: sec.color }}>{sec.title}</span>
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ fontSize: 12, color: sec.color, opacity: 0.8 }}>{secDone}/{sec.questions.length}</span>
-                <i className={`ti ti-chevron-${isCollapsed ? "down" : "up"}`} style={{ fontSize: 14, color: sec.color }} aria-hidden="true" />
-              </div>
-            </div>
+      {(() => {
+        let lastTopic = null;
+        return filteredSections.map(sec => {
+          const secDone = sec.questions.filter(q => checked[q.id]).length;
+          const isCollapsed = collapsed[sec.id];
+          const topicMeta = TOPIC_META[sec.topic];
+          const showBanner = sec.topic !== lastTopic && topicMeta;
+          lastTopic = sec.topic;
+          const secPct = Math.round((secDone / sec.questions.length) * 100);
 
-            {!isCollapsed && sec.questions.map(q => (
-              <div key={q.id} style={{
-                display: "flex", alignItems: "flex-start", gap: 12, padding: "10px 14px",
-                borderTop: "0.5px solid var(--color-border-tertiary)",
-                background: checked[q.id] ? "var(--color-background-secondary)" : "var(--color-background-primary)",
-                transition: "background 0.2s"
+          return (
+            <div key={sec.id}>
+              {/* Topic group banner */}
+              {showBanner && (
+                <div style={{
+                  display: "flex", alignItems: "center", gap: 10,
+                  margin: "1.5rem 0 0.75rem",
+                  paddingBottom: 10,
+                  borderBottom: `2.5px solid ${topicMeta.border}`,
+                }}>
+                  <span style={{
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: 32, height: 32, borderRadius: 8,
+                    background: topicMeta.bg,
+                    border: `1.5px solid ${topicMeta.border}`,
+                    fontSize: 16,
+                  }}>{topicMeta.emoji}</span>
+                  <span style={{ fontSize: 16, fontWeight: 700, color: topicMeta.accent, letterSpacing: "-0.3px" }}>
+                    {topicMeta.label}
+                  </span>
+                  <span style={{
+                    marginLeft: "auto", fontSize: 11, fontWeight: 500,
+                    color: topicMeta.accent, background: topicMeta.bg,
+                    border: `1px solid ${topicMeta.border}`,
+                    borderRadius: 99, padding: "2px 10px"
+                  }}>
+                    {filteredSections.filter(s => s.topic === sec.topic).reduce((a, s) => a + s.questions.filter(q => checked[q.id]).length, 0)}
+                    /{filteredSections.filter(s => s.topic === sec.topic).reduce((a, s) => a + s.questions.length, 0)} done
+                  </span>
+                </div>
+              )}
+
+              {/* Section card */}
+              <div style={{
+                marginBottom: "0.6rem",
+                border: `1px solid ${topicMeta ? topicMeta.border : "var(--color-border-tertiary)"}`,
+                borderLeft: `4px solid ${topicMeta ? topicMeta.accent : sec.color}`,
+                borderRadius: "var(--border-radius-lg)",
+                overflow: "hidden",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
               }}>
+                {/* Section header */}
                 <div
-                  onClick={() => toggle(q.id)}
+                  onClick={() => setCollapsed(c => ({ ...c, [sec.id]: !c[sec.id] }))}
                   style={{
-                    width: 22, height: 22, borderRadius: 5, flexShrink: 0, marginTop: 2,
-                    border: checked[q.id] ? "2px solid #3B6D11" : "2px solid #222",
-                    background: checked[q.id] ? "#3B6D11" : "#fff",
-                    display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
-                    boxShadow: "0 0 0 1px rgba(0,0,0,0.06)"
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    padding: "10px 14px",
+                    background: sec.bg,
+                    cursor: "pointer", userSelect: "none",
                   }}
                 >
-                  {checked[q.id] && <i className="ti ti-check" style={{ fontSize: 14, color: "#fff" }} aria-hidden="true" />}
-                </div>
-
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-                    <a href={q.link} target="_blank" rel="noreferrer" style={{
-                      fontSize: 13.5,
-                      color: checked[q.id] ? "var(--color-text-tertiary)" : "var(--color-text-info)",
-                      textDecoration: checked[q.id] ? "line-through" : "underline",
-                      textUnderlineOffset: 2, textDecorationColor: "var(--color-border-info)",
-                      fontWeight: q.important ? 500 : 400,
-                    }}>
-                      {q.title}
-                    </a>
-                    <DiffBadge d={q.diff} />
-                    {q.important && (
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
+                    {topicMeta && (
                       <span style={{
-                        fontSize: 10, padding: "1px 6px", borderRadius: 99,
-                        background: "#FAEEDA", color: "#854F0B", fontWeight: 500, flexShrink: 0,
-                        border: "1px solid #EF9F27"
-                      }}>⭐ IMP</span>
+                        fontSize: 9, fontWeight: 700, letterSpacing: "0.5px", textTransform: "uppercase",
+                        color: topicMeta.accent, background: topicMeta.bg,
+                        border: `1px solid ${topicMeta.border}`,
+                        borderRadius: 4, padding: "1px 6px", flexShrink: 0,
+                      }}>{topicMeta.emoji} {topicMeta.label}</span>
                     )}
+                    <span style={{ fontWeight: 600, fontSize: 13, color: sec.color, lineHeight: 1.3 }}>{sec.title}</span>
                   </div>
-
-                  {/* Pattern tag */}
-                  {q.pattern && (
-                    <div style={{ marginTop: 4 }}>
-                      <span style={{ fontSize: 10.5, color: "#534AB7", background: "#EEEDFE", border: "1px solid #b5b0f5", borderRadius: 4, padding: "1px 7px", fontWeight: 500 }}>
-                        ⚙ {q.pattern}
-                      </span>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0, marginLeft: 8 }}>
+                    {/* Mini progress bar */}
+                    <div style={{ width: 48, height: 5, borderRadius: 99, background: "rgba(0,0,0,0.1)", overflow: "hidden" }}>
+                      <div style={{ width: `${secPct}%`, height: "100%", background: sec.color, borderRadius: 99, transition: "width 0.4s" }} />
                     </div>
-                  )}
-
-                  {notes[q.id] && (
-                    <div style={{ marginTop: 4, fontSize: 12, color: "var(--color-text-secondary)", background: "var(--color-background-secondary)", borderRadius: 4, padding: "4px 8px", borderLeft: "2px solid var(--color-border-info)" }}>
-                      {notes[q.id]}
-                    </div>
-                  )}
-
-                  <button
-                    onClick={() => { setNoteText(notes[q.id] || ""); setOpenNote(q.id); }}
-                    style={{
-                      marginTop: 5, display: "inline-flex", alignItems: "center", gap: 4,
-                      fontSize: 11, padding: "2px 8px", borderRadius: 4, cursor: "pointer",
-                      border: "1px solid #999",
-                      background: notes[q.id] ? "var(--color-background-info)" : "#f0f0f0",
-                      color: notes[q.id] ? "var(--color-text-info)" : "#444",
-                      fontFamily: "var(--font-sans)"
-                    }}
-                  >
-                    <i className={`ti ti-${notes[q.id] ? "pencil" : "notes"}`} style={{ fontSize: 12 }} aria-hidden="true" />
-                    {notes[q.id] ? "Edit Note" : "+ Add Note"}
-                  </button>
+                    <span style={{ fontSize: 12, color: sec.color, opacity: 0.9, fontWeight: 500, minWidth: 32, textAlign: "right" }}>{secDone}/{sec.questions.length}</span>
+                    <i className={`ti ti-chevron-${isCollapsed ? "down" : "up"}`} style={{ fontSize: 14, color: sec.color }} aria-hidden="true" />
+                  </div>
                 </div>
+
+                {!isCollapsed && sec.questions.map(q => (
+                  <div key={q.id} style={{
+                    display: "flex", alignItems: "flex-start", gap: 12, padding: "10px 14px",
+                    borderTop: "0.5px solid var(--color-border-tertiary)",
+                    background: checked[q.id] ? "var(--color-background-secondary)" : "var(--color-background-primary)",
+                    transition: "background 0.2s"
+                  }}>
+                    <div
+                      onClick={() => toggle(q.id)}
+                      style={{
+                        width: 22, height: 22, borderRadius: 5, flexShrink: 0, marginTop: 2,
+                        border: checked[q.id] ? `2px solid ${topicMeta ? topicMeta.accent : sec.color}` : "2px solid #d1d5db",
+                        background: checked[q.id] ? (topicMeta ? topicMeta.accent : sec.color) : "#fff",
+                        display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
+                        transition: "all 0.15s",
+                      }}
+                    >
+                      {checked[q.id] && <i className="ti ti-check" style={{ fontSize: 13, color: "#fff" }} aria-hidden="true" />}
+                    </div>
+
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+                        <a href={q.link} target="_blank" rel="noreferrer" style={{
+                          fontSize: 13.5,
+                          color: checked[q.id] ? "var(--color-text-tertiary)" : "var(--color-text-info)",
+                          textDecoration: checked[q.id] ? "line-through" : "underline",
+                          textUnderlineOffset: 2, textDecorationColor: "var(--color-border-info)",
+                          fontWeight: q.important ? 500 : 400,
+                        }}>
+                          {q.title}
+                        </a>
+                        <DiffBadge d={q.diff} />
+                        {q.important && (
+                          <span style={{
+                            fontSize: 10, padding: "1px 6px", borderRadius: 99,
+                            background: "#FAEEDA", color: "#854F0B", fontWeight: 500, flexShrink: 0,
+                            border: "1px solid #EF9F27"
+                          }}>⭐ IMP</span>
+                        )}
+                      </div>
+
+                      {q.pattern && (
+                        <div style={{ marginTop: 4 }}>
+                          <span style={{ fontSize: 10.5, color: topicMeta ? topicMeta.accent : "#534AB7", background: topicMeta ? topicMeta.bg : "#EEEDFE", border: `1px solid ${topicMeta ? topicMeta.border : "#b5b0f5"}`, borderRadius: 4, padding: "1px 7px", fontWeight: 500 }}>
+                            ⚙ {q.pattern}
+                          </span>
+                        </div>
+                      )}
+
+                      {notes[q.id] && (
+                        <div style={{ marginTop: 4, fontSize: 12, color: "var(--color-text-secondary)", background: "var(--color-background-secondary)", borderRadius: 4, padding: "4px 8px", borderLeft: "2px solid var(--color-border-info)" }}>
+                          {notes[q.id]}
+                        </div>
+                      )}
+
+                      <button
+                        onClick={() => { setNoteText(notes[q.id] || ""); setOpenNote(q.id); }}
+                        style={{
+                          marginTop: 5, display: "inline-flex", alignItems: "center", gap: 4,
+                          fontSize: 11, padding: "2px 8px", borderRadius: 4, cursor: "pointer",
+                          border: "1px solid #999",
+                          background: notes[q.id] ? "var(--color-background-info)" : "#f0f0f0",
+                          color: notes[q.id] ? "var(--color-text-info)" : "#444",
+                          fontFamily: "var(--font-sans)"
+                        }}
+                      >
+                        <i className={`ti ti-${notes[q.id] ? "pencil" : "notes"}`} style={{ fontSize: 12 }} aria-hidden="true" />
+                        {notes[q.id] ? "Edit Note" : "+ Add Note"}
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        );
-      })}
+            </div>
+          );
+        });
+      })()}
 
       {filteredSections.length === 0 && (
         <div style={{ textAlign: "center", padding: "2rem", color: "var(--color-text-tertiary)", fontSize: 14 }}>

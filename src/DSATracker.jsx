@@ -331,6 +331,72 @@ const ALL_SECTIONS = [
       { id: "bs7q2", title: "Median of Two Sorted Arrays (LC 4)",      link: "https://leetcode.com/problems/median-of-two-sorted-arrays/",                   important: true,  diff: "H", pattern: "Binary search on smaller array" },
       { id: "bs7q3", title: "Find K Closest Elements (LC 658)",        link: "https://leetcode.com/problems/find-k-closest-elements/",                       important: false, diff: "M", pattern: "BS to find left boundary of window" },
     ]
+  },
+  {
+    id: "rb1", topic: "rb", title: "Recursion & Backtracking — Phase 1: Pick / Not Pick", color: "#3B6D11", bg: "#EAF3DE",
+    questions: [
+      { id: "rb1q1", title: "Subset Sums (GFG)",  link: "https://www.geeksforgeeks.org/problems/subset-sums2234/1",      important: true,  diff: "M", pattern: "Include / Exclude" },
+      { id: "rb1q2", title: "Subsets (LC 78)",     link: "https://leetcode.com/problems/subsets/",                       important: true,  diff: "M", pattern: "Recursion tree — all 2^n subsets" },
+      { id: "rb1q3", title: "Subsets II (LC 90)",  link: "https://leetcode.com/problems/subsets-ii/",                    important: true,  diff: "M", pattern: "Duplicate handling via sort + skip" },
+    ]
+  },
+  {
+    id: "rb2", topic: "rb", title: "Recursion & Backtracking — Phase 2: Combination Pattern", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "rb2q1", title: "Combination Sum (LC 39)",                      link: "https://leetcode.com/problems/combination-sum/",                    important: true,  diff: "M", pattern: "Reuse elements, unbounded pick" },
+      { id: "rb2q2", title: "Combination Sum II (LC 40)",                   link: "https://leetcode.com/problems/combination-sum-ii/",                 important: true,  diff: "M", pattern: "No reuse + duplicate pruning" },
+      { id: "rb2q3", title: "Combination Sum III (LC 216)",                 link: "https://leetcode.com/problems/combination-sum-iii/",                important: true,  diff: "M", pattern: "Exactly K numbers summing to N" },
+      { id: "rb2q4", title: "Letter Combinations of a Phone Number (LC 17)",link: "https://leetcode.com/problems/letter-combinations-of-a-phone-number/", important: true, diff: "M", pattern: "Multi-choice recursion per digit" },
+    ]
+  },
+  {
+    id: "rb3", topic: "rb", title: "Recursion & Backtracking — Phase 3: Permutation Pattern", color: "#534AB7", bg: "#EEEDFE",
+    questions: [
+      { id: "rb3q1", title: "Permutations (LC 46)",             link: "https://leetcode.com/problems/permutations/",                                             important: true,  diff: "M", pattern: "Visited array / in-place swap" },
+      { id: "rb3q2", title: "Permutations II (LC 47)",          link: "https://leetcode.com/problems/permutations-ii/",                                          important: true,  diff: "M", pattern: "Duplicate elimination via sort" },
+      { id: "rb3q3", title: "String Permutations (GFG)",        link: "https://www.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1",             important: false, diff: "M", pattern: "In-place swap on string" },
+    ]
+  },
+  {
+    id: "rb4", topic: "rb", title: "Recursion & Backtracking — Phase 4: Partitioning Pattern", color: "#854F0B", bg: "#FAEEDA",
+    questions: [
+      { id: "rb4q1", title: "Palindrome Partitioning (LC 131)", link: "https://leetcode.com/problems/palindrome-partitioning/", important: true, diff: "M", pattern: "Partition recursion + palindrome check" },
+      { id: "rb4q2", title: "Restore IP Addresses (LC 93)",     link: "https://leetcode.com/problems/restore-ip-addresses/",   important: true, diff: "M", pattern: "Partition recursion + validity check" },
+    ]
+  },
+  {
+    id: "rb5", topic: "rb", title: "Recursion & Backtracking — Phase 5: Grid Backtracking", color: "#0F6E56", bg: "#E1F5EE",
+    questions: [
+      { id: "rb5q1", title: "Word Search (LC 79)",              link: "https://leetcode.com/problems/word-search/",                               important: true,  diff: "M", pattern: "Visited marking + undo step" },
+      { id: "rb5q2", title: "Path with Maximum Gold (LC 1219)", link: "https://leetcode.com/problems/path-with-maximum-gold/",                    important: true,  diff: "M", pattern: "Direction arrays + backtrack" },
+      { id: "rb5q3", title: "Rat in a Maze (GFG)",             link: "https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1",           important: true,  diff: "M", pattern: "4-directional DFS + undo" },
+    ]
+  },
+  {
+    id: "rb6", topic: "rb", title: "Recursion & Backtracking — Phase 6: Constraint Satisfaction", color: "#993556", bg: "#FBEAF0",
+    questions: [
+      { id: "rb6q1", title: "N-Queens (LC 51)",         link: "https://leetcode.com/problems/n-queens/",                                          important: true,  diff: "H", pattern: "Row / col / diagonal pruning" },
+      { id: "rb6q2", title: "N-Queens II (LC 52)",      link: "https://leetcode.com/problems/n-queens-ii/",                                       important: true,  diff: "H", pattern: "Count solutions of N-Queens" },
+      { id: "rb6q3", title: "Sudoku Solver (LC 37)",    link: "https://leetcode.com/problems/sudoku-solver/",                                     important: true,  diff: "H", pattern: "Constraint pruning per cell" },
+      { id: "rb6q4", title: "M-Coloring Problem (GFG)", link: "https://www.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1",          important: true,  diff: "M", pattern: "Feasibility + constraint check" },
+    ]
+  },
+  {
+    id: "rb7", topic: "rb", title: "Recursion & Backtracking — Phase 7: Advanced Interview Favorites", color: "#993C1D", bg: "#FAECE7",
+    questions: [
+      { id: "rb7q1", title: "Generate Parentheses (LC 22)",                               link: "https://leetcode.com/problems/generate-parentheses/",                                            important: true,  diff: "M", pattern: "open/close count pruning" },
+      { id: "rb7q2", title: "Expression Add Operators (LC 282)",                          link: "https://leetcode.com/problems/expression-add-operators/",                                        important: true,  diff: "H", pattern: "Multi-choice + eval on the fly" },
+      { id: "rb7q3", title: "Split String Into Max Unique Substrings (LC 1593)",          link: "https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/",         important: false, diff: "M", pattern: "Backtrack + set for uniqueness" },
+      { id: "rb7q4", title: "Max Length Concatenated String with Unique Chars (LC 1239)", link: "https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/", important: false, diff: "M", pattern: "Pick/not-pick + bitmask check" },
+    ]
+  },
+  {
+    id: "rb8", topic: "rb", title: "Recursion & Backtracking — Phase 8: Hard / Top Company", color: "#A32D2D", bg: "#FCEBEB",
+    questions: [
+      { id: "rb8q1", title: "Word Break II (LC 140)",              link: "https://leetcode.com/problems/word-break-ii/",              important: true, diff: "H", pattern: "Backtrack + memoisation" },
+      { id: "rb8q2", title: "Remove Invalid Parentheses (LC 301)", link: "https://leetcode.com/problems/remove-invalid-parentheses/", important: true, diff: "H", pattern: "BFS / backtrack with pruning" },
+      { id: "rb8q3", title: "Word Search II (LC 212)",             link: "https://leetcode.com/problems/word-search-ii/",             important: true, diff: "H", pattern: "Trie + backtracking on grid" },
+    ]
   }
 ];
 
@@ -450,7 +516,7 @@ export default function DSATracker() {
 
       {/* Topic filter */}
       <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
-        {[["all","📚 All Topics"], ["arrays","🔢 Arrays & Matrix"], ["sw","🪟 Sliding Window"], ["ps","➕ Prefix Sum"], ["bs","🔍 Binary Search"]].map(([val, label]) => (
+        {[["all","📚 All Topics"], ["arrays","🔢 Arrays & Matrix"], ["sw","🪟 Sliding Window"], ["ps","➕ Prefix Sum"], ["bs","🔍 Binary Search"], ["rb","🔄 Recursion & BT"]].map(([val, label]) => (
           <button key={val} onClick={() => setTopicFilter(val)} style={{
             fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
             border: "1.5px solid",

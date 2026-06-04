@@ -260,6 +260,77 @@ const ALL_SECTIONS = [
       { id: "ps8q1", title: "Range Sum Query 2D - Immutable (LC 304)", link: "https://leetcode.com/problems/range-sum-query-2d-immutable/", important: true,  diff: "M", pattern: "2D prefix sum" },
       { id: "ps8q2", title: "Matrix Block Sum (LC 1314)",               link: "https://leetcode.com/problems/matrix-block-sum/",            important: false, diff: "M", pattern: "2D prefix sum window" },
     ]
+  },
+  {
+    id: "bs1", topic: "bs", title: "Binary Search — Level 1: Basic Foundations", color: "#1A5E8A", bg: "#E3F2FD",
+    questions: [
+      { id: "bs1q1", title: "Binary Search (LC 704 / GFG)",          link: "https://www.geeksforgeeks.org/problems/binary-search-1587115620/1",     important: true,  diff: "E", pattern: "low <= high, mid, shrink space" },
+      { id: "bs1q2", title: "Lower Bound (GFG)",                     link: "https://www.geeksforgeeks.org/problems/implement-lower-bound/1",         important: true,  diff: "E", pattern: "First index where arr[i] >= x" },
+      { id: "bs1q3", title: "Upper Bound (GFG)",                     link: "https://www.geeksforgeeks.org/problems/implement-upper-bound/1",         important: true,  diff: "E", pattern: "First index where arr[i] > x" },
+      { id: "bs1q4", title: "Floor in a Sorted Array (GFG)",         link: "https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1", important: true, diff: "E", pattern: "Largest element <= x" },
+      { id: "bs1q5", title: "Ceil in a Sorted Array (GFG)",          link: "https://www.geeksforgeeks.org/problems/ceiling-in-a-sorted-array/1",    important: true,  diff: "E", pattern: "Smallest element >= x" },
+      { id: "bs1q6", title: "Search Insert Position (LC 35)",        link: "https://leetcode.com/problems/search-insert-position/",                 important: true,  diff: "E", pattern: "Lower bound application" },
+      { id: "bs1q7", title: "First Bad Version (LC 278)",            link: "https://leetcode.com/problems/first-bad-version/",                      important: false, diff: "E", pattern: "First true in boolean space" },
+      { id: "bs1q8", title: "Guess Number Higher or Lower (LC 374)", link: "https://leetcode.com/problems/guess-number-higher-or-lower/",           important: false, diff: "E", pattern: "Classic binary search variant" },
+    ]
+  },
+  {
+    id: "bs2", topic: "bs", title: "Binary Search — Level 2: First / Last Occurrence", color: "#2E7D32", bg: "#E8F5E9",
+    questions: [
+      { id: "bs2q1", title: "Number of Occurrence (GFG)",                          link: "https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1",                important: true, diff: "E", pattern: "last - first + 1 occurrences" },
+      { id: "bs2q2", title: "Find First and Last Position of Element (LC 34)",     link: "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/", important: true, diff: "M", pattern: "Lower bound + upper bound" },
+    ]
+  },
+  {
+    id: "bs3", topic: "bs", title: "Binary Search — Level 3: Rotated Sorted Arrays", color: "#6A1B9A", bg: "#F3E5F5",
+    questions: [
+      { id: "bs3q1", title: "Search in Rotated Sorted Array (LC 33)",       link: "https://leetcode.com/problems/search-in-rotated-sorted-array/",      important: true,  diff: "M", pattern: "Identify sorted half, search it" },
+      { id: "bs3q2", title: "Search in Rotated Sorted Array II (LC 81)",    link: "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",   important: true,  diff: "M", pattern: "Duplicates — shrink both ends" },
+      { id: "bs3q3", title: "Find Minimum in Rotated Sorted Array (LC 153)", link: "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",important: true,  diff: "M", pattern: "Pivot tracking" },
+      { id: "bs3q4", title: "Single Element in a Sorted Array (LC 540)",    link: "https://leetcode.com/problems/single-element-in-a-sorted-array/",    important: true,  diff: "M", pattern: "Even/odd index parity check" },
+      { id: "bs3q5", title: "Rotation Count (GFG)",                         link: "https://www.geeksforgeeks.org/problems/rotation4723/1",               important: false, diff: "M", pattern: "Index of minimum = rotation count" },
+    ]
+  },
+  {
+    id: "bs4", topic: "bs", title: "Binary Search — Level 4: Peak Problems", color: "#E65100", bg: "#FFF3E0",
+    questions: [
+      { id: "bs4q1", title: "Peak Element (GFG)",                     link: "https://www.geeksforgeeks.org/problems/peak-element/1",          important: true,  diff: "E", pattern: "Move toward greater neighbor" },
+      { id: "bs4q2", title: "Find Peak Element (LC 162)",             link: "https://leetcode.com/problems/find-peak-element/",              important: true,  diff: "M", pattern: "Any peak, log n" },
+      { id: "bs4q3", title: "Peak Index in Mountain Array (LC 852)",  link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/", important: false, diff: "M", pattern: "Guaranteed single peak" },
+    ]
+  },
+  {
+    id: "bs5", topic: "bs", title: "Binary Search — Level 5: BS on Answer (Most Important)", color: "#880E4F", bg: "#FCE4EC",
+    questions: [
+      { id: "bs5q1",  title: "Square Root of a Number (GFG)",                   link: "https://www.geeksforgeeks.org/problems/square-root/1",                                   important: true,  diff: "E", pattern: "Answer in [1, n] range" },
+      { id: "bs5q2",  title: "Nth Root of M (GFG)",                             link: "https://www.geeksforgeeks.org/problems/find-nth-root-of-m5843/1",                       important: true,  diff: "M", pattern: "Binary search + power check" },
+      { id: "bs5q3",  title: "Koko Eating Bananas (LC 875)",                    link: "https://leetcode.com/problems/koko-eating-bananas/",                                    important: true,  diff: "M", pattern: "Min speed, feasibility check" },
+      { id: "bs5q4",  title: "Minimum Days to Make m Bouquets (LC 1482)",       link: "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",             important: true,  diff: "M", pattern: "BS on days, greedy check" },
+      { id: "bs5q5",  title: "Find Smallest Divisor Given Threshold (LC 1283)", link: "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",           important: true,  diff: "M", pattern: "BS on divisor value" },
+      { id: "bs5q6",  title: "Capacity to Ship Packages in D Days (LC 1011)",   link: "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",               important: true,  diff: "M", pattern: "BS on capacity, greedy ship" },
+      { id: "bs5q7",  title: "Aggressive Cows (GFG)",                           link: "https://www.geeksforgeeks.org/problems/aggressive-cows/1",                              important: true,  diff: "M", pattern: "Maximize min distance" },
+      { id: "bs5q8",  title: "Allocate Minimum Number of Pages (GFG)",          link: "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",        important: true,  diff: "M", pattern: "Minimize max pages per student" },
+      { id: "bs5q9",  title: "Painter's Partition Problem (GFG)",               link: "https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1",           important: true,  diff: "M", pattern: "Same pattern as Allocate Pages" },
+      { id: "bs5q10", title: "Magnetic Force Between Two Balls (LC 1552)",      link: "https://leetcode.com/problems/magnetic-force-between-two-balls/",                      important: true,  diff: "M", pattern: "Maximize min distance" },
+      { id: "bs5q11", title: "Split Array Largest Sum (LC 410)",                link: "https://leetcode.com/problems/split-array-largest-sum/",                               important: true,  diff: "H", pattern: "Minimize max subarray sum (hard)" },
+    ]
+  },
+  {
+    id: "bs6", topic: "bs", title: "Binary Search — Level 6: Matrix Binary Search", color: "#004D40", bg: "#E0F2F1",
+    questions: [
+      { id: "bs6q1", title: "Search a 2D Matrix (LC 74)",                    link: "https://leetcode.com/problems/search-a-2d-matrix/",                                  important: true,  diff: "M", pattern: "Flatten matrix index trick" },
+      { id: "bs6q2", title: "Search a 2D Matrix II (LC 240)",                link: "https://leetcode.com/problems/search-a-2d-matrix-ii/",                              important: true,  diff: "M", pattern: "Start from top-right corner" },
+      { id: "bs6q3", title: "Median in Row-Wise Sorted Matrix (GFG)",        link: "https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1028/1",   important: true,  diff: "H", pattern: "BS on value + count <= mid" },
+      { id: "bs6q4", title: "Kth Smallest in Sorted Matrix (LC 378)",        link: "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",            important: true,  diff: "M", pattern: "BS on value + count check" },
+    ]
+  },
+  {
+    id: "bs7", topic: "bs", title: "Binary Search — Level 7: Hard Interview Questions", color: "#B71C1C", bg: "#FFEBEE",
+    questions: [
+      { id: "bs7q1", title: "K-th Element of Two Sorted Arrays (GFG)", link: "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1", important: true,  diff: "H", pattern: "Binary search on partition" },
+      { id: "bs7q2", title: "Median of Two Sorted Arrays (LC 4)",      link: "https://leetcode.com/problems/median-of-two-sorted-arrays/",                   important: true,  diff: "H", pattern: "Binary search on smaller array" },
+      { id: "bs7q3", title: "Find K Closest Elements (LC 658)",        link: "https://leetcode.com/problems/find-k-closest-elements/",                       important: false, diff: "M", pattern: "BS to find left boundary of window" },
+    ]
   }
 ];
 
@@ -379,7 +450,7 @@ export default function DSATracker() {
 
       {/* Topic filter */}
       <div style={{ display: "flex", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
-        {[["all","📚 All Topics"], ["arrays","🔢 Arrays & Matrix"], ["sw","🪟 Sliding Window"], ["ps","➕ Prefix Sum"]].map(([val, label]) => (
+        {[["all","📚 All Topics"], ["arrays","🔢 Arrays & Matrix"], ["sw","🪟 Sliding Window"], ["ps","➕ Prefix Sum"], ["bs","🔍 Binary Search"]].map(([val, label]) => (
           <button key={val} onClick={() => setTopicFilter(val)} style={{
             fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
             border: "1.5px solid",

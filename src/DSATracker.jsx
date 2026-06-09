@@ -397,6 +397,109 @@ const ALL_SECTIONS = [
       { id: "rb8q2", title: "Remove Invalid Parentheses (LC 301)", link: "https://leetcode.com/problems/remove-invalid-parentheses/", important: true, diff: "H", pattern: "BFS / backtrack with pruning" },
       { id: "rb8q3", title: "Word Search II (LC 212)",             link: "https://leetcode.com/problems/word-search-ii/",             important: true, diff: "H", pattern: "Trie + backtracking on grid" },
     ]
+  },
+  // ─── DYNAMIC PROGRAMMING ───────────────────────────────────────────────────
+  {
+    id: "dp0", topic: "dp", title: "DP — Phase 0: Foundation (Must Know)", color: "#1B5E20", bg: "#E8F5E9",
+    questions: [
+      { id: "dp0q1", title: "Climbing Stairs (LC 70)",       link: "https://leetcode.com/problems/climbing-stairs/",                                             important: true,  diff: "E", pattern: "Classic 1D DP / memoization intro" },
+      { id: "dp0q2", title: "Frog Jump — Classic (GFG)",     link: "https://www.geeksforgeeks.org/problems/geek-jump/1",                                          important: true,  diff: "E", pattern: "Recursion → memoization → tabulation" },
+      { id: "dp0q3", title: "Frog Jump with K Distance (GFG)",link: "https://www.geeksforgeeks.org/problems/minimal-cost/1",                                      important: true,  diff: "M", pattern: "Variable jump DP" },
+    ]
+  },
+  {
+    id: "dp1", topic: "dp", title: "DP — Phase 1: 1D DP (Very Important)", color: "#0D47A1", bg: "#E3F2FD",
+    questions: [
+      { id: "dp1q1", title: "House Robber (LC 198)",                      link: "https://leetcode.com/problems/house-robber/",                                  important: true,  diff: "M", pattern: "Pick / not-pick on 1D" },
+      { id: "dp1q2", title: "House Robber II (LC 213)",                   link: "https://leetcode.com/problems/house-robber-ii/",                               important: true,  diff: "M", pattern: "Circular array — two linear DP calls" },
+      { id: "dp1q3", title: "Maximum Sum Non Adjacent (GFG)",             link: "https://www.geeksforgeeks.org/problems/max-sum-without-adjacents2430/1",        important: true,  diff: "M", pattern: "Same as House Robber" },
+      { id: "dp1q4", title: "Delete and Earn (LC 740)",                   link: "https://leetcode.com/problems/delete-and-earn/",                               important: true,  diff: "M", pattern: "Reduce to House Robber" },
+      { id: "dp1q5", title: "Solving Questions With Brainpower (LC 2140)",link: "https://leetcode.com/problems/solving-questions-with-brainpower/",              important: true,  diff: "M", pattern: "Skip interval DP" },
+    ]
+  },
+  {
+    id: "dp2", topic: "dp", title: "DP — Phase 2: Grid DP (Extremely Common)", color: "#4A148C", bg: "#F3E5F5",
+    questions: [
+      { id: "dp2q1", title: "Unique Paths (LC 62)",           link: "https://leetcode.com/problems/unique-paths/",                                               important: true,  diff: "M", pattern: "2D DP — count paths" },
+      { id: "dp2q2", title: "Unique Paths II (LC 63)",        link: "https://leetcode.com/problems/unique-paths-ii/",                                            important: true,  diff: "M", pattern: "Obstacles in grid" },
+      { id: "dp2q3", title: "Minimum Path Sum (LC 64)",       link: "https://leetcode.com/problems/minimum-path-sum/",                                           important: true,  diff: "M", pattern: "Min cost grid DP" },
+      { id: "dp2q4", title: "Triangle (LC 120)",              link: "https://leetcode.com/problems/triangle/",                                                   important: true,  diff: "M", pattern: "Bottom-up triangle DP" },
+      { id: "dp2q5", title: "Ninja Training (GFG)",           link: "https://www.geeksforgeeks.org/problems/geeks-training/1",                                   important: true,  diff: "M", pattern: "3-column grid DP with skip" },
+      { id: "dp2q6", title: "Cherry Pickup II (LC 1463)",     link: "https://leetcode.com/problems/cherry-pickup-ii/",                                           important: true,  diff: "H", pattern: "Two simultaneous agents on grid" },
+    ]
+  },
+  {
+    id: "dp3", topic: "dp", title: "DP — Phase 3: Subsequence DP (Most Important Interview Pattern)", color: "#BF360C", bg: "#FBE9E7",
+    questions: [
+      { id: "dp3q1", title: "Subset Sum (GFG)",                          link: "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",         important: true,  diff: "M", pattern: "Boolean DP on sum" },
+      { id: "dp3q2", title: "Partition Equal Subset Sum (LC 416)",       link: "https://leetcode.com/problems/partition-equal-subset-sum/",                      important: true,  diff: "M", pattern: "Subset sum with target = total/2" },
+      { id: "dp3q3", title: "Count Subsets With Sum K (GFG)",            link: "https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1",               important: true,  diff: "M", pattern: "Count DP on sum" },
+      { id: "dp3q4", title: "Target Sum (LC 494)",                       link: "https://leetcode.com/problems/target-sum/",                                      important: true,  diff: "M", pattern: "Assign +/- to reduce to subset count" },
+      { id: "dp3q5", title: "Partition With Given Difference (GFG)",     link: "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1",      important: true,  diff: "M", pattern: "Count subsets with fixed difference" },
+      { id: "dp3q6", title: "Coin Change (LC 322)",                      link: "https://leetcode.com/problems/coin-change/",                                     important: true,  diff: "M", pattern: "Unbounded knapsack — min coins" },
+      { id: "dp3q7", title: "Coin Change II (LC 518)",                   link: "https://leetcode.com/problems/coin-change-ii/",                                  important: true,  diff: "M", pattern: "Unbounded knapsack — count ways" },
+      { id: "dp3q8", title: "Rod Cutting (GFG)",                         link: "https://www.geeksforgeeks.org/problems/rod-cutting0840/1",                       important: true,  diff: "M", pattern: "Unbounded knapsack on lengths" },
+    ]
+  },
+  {
+    id: "dp4", topic: "dp", title: "DP — Phase 4: Knapsack Family (Mandatory)", color: "#E65100", bg: "#FFF3E0",
+    questions: [
+      { id: "dp4q1", title: "0/1 Knapsack (GFG)",              link: "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",                       important: true,  diff: "M", pattern: "Classic 0/1 knapsack" },
+      { id: "dp4q2", title: "Unbounded Knapsack (GFG)",        link: "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1",              important: true,  diff: "M", pattern: "Unbounded — reuse items" },
+      { id: "dp4q3", title: "Ones and Zeroes (LC 474)",        link: "https://leetcode.com/problems/ones-and-zeroes/",                                          important: true,  diff: "M", pattern: "2D knapsack on 0s and 1s count" },
+    ]
+  },
+  {
+    id: "dp5", topic: "dp", title: "DP — Phase 5: String DP (Very Frequently Asked)", color: "#006064", bg: "#E0F7FA",
+    questions: [
+      { id: "dp5q1", title: "Longest Common Subsequence (LC 1143)",    link: "https://leetcode.com/problems/longest-common-subsequence/",                        important: true,  diff: "M", pattern: "LCS 2D DP" },
+      { id: "dp5q2", title: "Print LCS (GFG)",                         link: "https://www.geeksforgeeks.org/problems/print-lcs5204/1",                           important: true,  diff: "M", pattern: "Backtrack LCS table" },
+      { id: "dp5q3", title: "Longest Common Substring (GFG)",          link: "https://www.geeksforgeeks.org/problems/longest-common-substring1452/1",            important: true,  diff: "M", pattern: "LCS variant — contiguous" },
+      { id: "dp5q4", title: "Shortest Common Supersequence (LC 1092)", link: "https://leetcode.com/problems/shortest-common-supersequence/",                     important: true,  diff: "H", pattern: "SCS = len(s1)+len(s2) - LCS" },
+      { id: "dp5q5", title: "Edit Distance (LC 72)",                   link: "https://leetcode.com/problems/edit-distance/",                                     important: true,  diff: "H", pattern: "Insert/Delete/Replace DP" },
+      { id: "dp5q6", title: "Distinct Subsequences (LC 115)",          link: "https://leetcode.com/problems/distinct-subsequences/",                             important: true,  diff: "H", pattern: "Count subsequences matching pattern" },
+      { id: "dp5q7", title: "Wildcard Matching (LC 44)",               link: "https://leetcode.com/problems/wildcard-matching/",                                 important: true,  diff: "H", pattern: "? and * pattern matching DP" },
+      { id: "dp5q8", title: "Regular Expression Matching (LC 10)",     link: "https://leetcode.com/problems/regular-expression-matching/",                       important: true,  diff: "H", pattern: "Regex . and * DP (Google/Amazon)" },
+    ]
+  },
+  {
+    id: "dp6", topic: "dp", title: "DP — Phase 6: LIS Pattern (Very Common)", color: "#1A237E", bg: "#E8EAF6",
+    questions: [
+      { id: "dp6q1", title: "Longest Increasing Subsequence (LC 300)",  link: "https://leetcode.com/problems/longest-increasing-subsequence/",                   important: true,  diff: "M", pattern: "O(n²) DP / O(n log n) patience sort" },
+      { id: "dp6q2", title: "Number of LIS (LC 673)",                   link: "https://leetcode.com/problems/number-of-longest-increasing-subsequence/",         important: true,  diff: "M", pattern: "Count DP alongside LIS DP" },
+      { id: "dp6q3", title: "Largest Divisible Subset (LC 368)",        link: "https://leetcode.com/problems/largest-divisible-subset/",                         important: true,  diff: "M", pattern: "LIS on divisibility" },
+      { id: "dp6q4", title: "Longest String Chain (LC 1048)",           link: "https://leetcode.com/problems/longest-string-chain/",                             important: true,  diff: "M", pattern: "LIS on word predecessors" },
+      { id: "dp6q5", title: "Russian Doll Envelopes (LC 354)",          link: "https://leetcode.com/problems/russian-doll-envelopes/",                           important: true,  diff: "H", pattern: "Sort + LIS on second dimension" },
+    ]
+  },
+  {
+    id: "dp7", topic: "dp", title: "DP — Phase 7: Partition DP (High Interview Value)", color: "#880E4F", bg: "#FCE4EC",
+    questions: [
+      { id: "dp7q1", title: "Matrix Chain Multiplication (GFG)",        link: "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",        important: true,  diff: "H", pattern: "Interval DP — split at every k" },
+      { id: "dp7q2", title: "Minimum Cost to Cut a Stick (LC 1547)",    link: "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/",                      important: true,  diff: "H", pattern: "Interval DP on sorted cut positions" },
+      { id: "dp7q3", title: "Burst Balloons (LC 312)",                  link: "https://leetcode.com/problems/burst-balloons/",                                   important: true,  diff: "H", pattern: "Think last balloon to burst in range" },
+      { id: "dp7q4", title: "Palindrome Partitioning II (LC 132)",      link: "https://leetcode.com/problems/palindrome-partitioning-ii/",                       important: true,  diff: "H", pattern: "Min cuts with palindrome precompute" },
+    ]
+  },
+  {
+    id: "dp8", topic: "dp", title: "DP — Phase 8: DP on Stocks (Asked a Lot)", color: "#827717", bg: "#F9FBE7",
+    questions: [
+      { id: "dp8q1", title: "Best Time to Buy and Sell Stock II (LC 122)", link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",            important: true,  diff: "M", pattern: "Unlimited transactions DP" },
+      { id: "dp8q2", title: "Stock III — At Most 2 Transactions (LC 123)", link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",           important: true,  diff: "H", pattern: "3D DP: day × txn × hold state" },
+      { id: "dp8q3", title: "Stock IV — At Most K Transactions (LC 188)",  link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",            important: true,  diff: "H", pattern: "Generalized k-transaction DP" },
+      { id: "dp8q4", title: "Stock with Cooldown (LC 309)",                link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/", important: true,  diff: "M", pattern: "Skip day after sell state" },
+      { id: "dp8q5", title: "Stock with Transaction Fee (LC 714)",         link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/", important: true, diff: "M", pattern: "Deduct fee on each sell" },
+    ]
+  },
+  {
+    id: "dp9", topic: "dp", title: "DP — Phase 9: Hard DP That Gives Massive ROI", color: "#B71C1C", bg: "#FFEBEE",
+    questions: [
+      { id: "dp9q1", title: "Longest Valid Parentheses (LC 32)",  link: "https://leetcode.com/problems/longest-valid-parentheses/",  important: true,  diff: "H", pattern: "Stack / 1D DP on parentheses" },
+      { id: "dp9q2", title: "Decode Ways (LC 91)",                link: "https://leetcode.com/problems/decode-ways/",                important: true,  diff: "M", pattern: "Fibonacci-style digit DP" },
+      { id: "dp9q3", title: "Interleaving String (LC 97)",        link: "https://leetcode.com/problems/interleaving-string/",        important: true,  diff: "M", pattern: "2D DP on two string positions" },
+      { id: "dp9q4", title: "Word Break (LC 139)",                link: "https://leetcode.com/problems/word-break/",                 important: true,  diff: "M", pattern: "DP + set lookup at every split" },
+      { id: "dp9q5", title: "Frog Jump — Stones (LC 403)",        link: "https://leetcode.com/problems/frog-jump/",                  important: true,  diff: "H", pattern: "DP + set of reachable k values" },
+    ]
   }
 ];
 
@@ -413,11 +516,12 @@ function DiffBadge({ d }) {
 }
 
 const TOPIC_META = {
-  arrays: { label: "Arrays & Matrix",  emoji: "🔢", accent: "#185FA5", bg: "#E6F1FB", border: "#93c5fd" },
-  sw:     { label: "Sliding Window",   emoji: "🪟", accent: "#0F6E56", bg: "#E1F5EE", border: "#6ee7b7" },
-  ps:     { label: "Prefix Sum",       emoji: "➕", accent: "#6D28D9", bg: "#EDE9FE", border: "#c4b5fd" },
-  bs:     { label: "Binary Search",    emoji: "🔍", accent: "#B45309", bg: "#FEF3C7", border: "#fcd34d" },
-  rb:     { label: "Recursion & BT",   emoji: "🔄", accent: "#9D174D", bg: "#FCE7F3", border: "#f9a8d4" },
+  arrays: { label: "Arrays & Matrix",       emoji: "🔢", accent: "#185FA5", bg: "#E6F1FB", border: "#93c5fd" },
+  sw:     { label: "Sliding Window",        emoji: "🪟", accent: "#0F6E56", bg: "#E1F5EE", border: "#6ee7b7" },
+  ps:     { label: "Prefix Sum",            emoji: "➕", accent: "#6D28D9", bg: "#EDE9FE", border: "#c4b5fd" },
+  bs:     { label: "Binary Search",         emoji: "🔍", accent: "#B45309", bg: "#FEF3C7", border: "#fcd34d" },
+  rb:     { label: "Recursion & BT",        emoji: "🔄", accent: "#9D174D", bg: "#FCE7F3", border: "#f9a8d4" },
+  dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#1B5E20", bg: "#E8F5E9", border: "#86efac" },
 };
 
 export default function DSATracker() {

@@ -500,7 +500,87 @@ const ALL_SECTIONS = [
       { id: "dp9q4", title: "Word Break (LC 139)",                link: "https://leetcode.com/problems/word-break/",                 important: true,  diff: "M", pattern: "DP + set lookup at every split" },
       { id: "dp9q5", title: "Frog Jump — Stones (LC 403)",        link: "https://leetcode.com/problems/frog-jump/",                  important: true,  diff: "H", pattern: "DP + set of reachable k values" },
     ]
-  }
+  },
+  // ─── GRAPHS ──────────────────────────────────────────────────────────────
+  {
+    id: "gr1", topic: "graph", title: "Graph — Phase 1: Representation + Basic DFS/BFS", color: "#0D47A1", bg: "#E3F2FD",
+    questions: [
+      { id: "gr1q1", title: "DFS of Graph (GFG)",                link: "https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1",  important: false, diff: "E", pattern: "Recursive DFS + visited array" },
+      { id: "gr1q2", title: "BFS of Graph (GFG)",                link: "https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1",             important: false, diff: "E", pattern: "Queue + level-order traversal" },
+      { id: "gr1q3", title: "Find if Path Exists in Graph",      link: "https://leetcode.com/problems/find-if-path-exists-in-graph/",                important: false, diff: "E", pattern: "DFS / BFS path check" },
+      { id: "gr1q4", title: "Number of Provinces",               link: "https://leetcode.com/problems/number-of-provinces/",                         important: true,  diff: "M", pattern: "Connected components via DFS" },
+    ]
+  },
+  {
+    id: "gr2", topic: "graph", title: "Graph — Phase 2: Grid Graphs (Must Master)", color: "#1565C0", bg: "#E3F2FD",
+    questions: [
+      { id: "gr2q1", title: "Number of Islands",                 link: "https://leetcode.com/problems/number-of-islands/",                           important: true,  diff: "M", pattern: "DFS / BFS on grid" },
+      { id: "gr2q2", title: "Max Area of Island",                link: "https://leetcode.com/problems/max-area-of-island/",                          important: false, diff: "M", pattern: "DFS with area tracking" },
+      { id: "gr2q3", title: "Flood Fill",                        link: "https://leetcode.com/problems/flood-fill/",                                  important: false, diff: "E", pattern: "DFS / BFS flood fill" },
+      { id: "gr2q4", title: "Surrounded Regions",                link: "https://leetcode.com/problems/surrounded-regions/",                          important: true,  diff: "M", pattern: "Border-connected DFS" },
+      { id: "gr2q5", title: "Rotting Oranges",                   link: "https://leetcode.com/problems/rotting-oranges/",                              important: true,  diff: "M", pattern: "Multi-source BFS" },
+      { id: "gr2q6", title: "01 Matrix",                         link: "https://leetcode.com/problems/01-matrix/",                                   important: false, diff: "M", pattern: "Multi-source BFS" },
+      { id: "gr2q7", title: "As Far from Land as Possible",      link: "https://leetcode.com/problems/as-far-from-land-as-possible/",                 important: false, diff: "M", pattern: "Multi-source BFS" },
+    ]
+  },
+  {
+    id: "gr3", topic: "graph", title: "Graph — Phase 3: Cycle Detection (Very Important)", color: "#C62828", bg: "#FFEBEE",
+    questions: [
+      { id: "gr3q1", title: "Detect Cycle in Undirected Graph (BFS)", link: "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1", important: true, diff: "M", pattern: "BFS + parent tracking" },
+      { id: "gr3q2", title: "Detect Cycle in Undirected Graph (DFS)", link: "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1", important: true, diff: "M", pattern: "DFS + parent tracking" },
+      { id: "gr3q3", title: "Detect Cycle in Directed Graph",        link: "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1",  important: true, diff: "M", pattern: "DFS + recursion stack" },
+      { id: "gr3q4", title: "Course Schedule",                       link: "https://leetcode.com/problems/course-schedule/",                              important: true, diff: "M", pattern: "Cycle detection in DAG" },
+      { id: "gr3q5", title: "Course Schedule II",                    link: "https://leetcode.com/problems/course-schedule-ii/",                           important: true, diff: "M", pattern: "Topological order + cycle check" },
+    ]
+  },
+  {
+    id: "gr4", topic: "graph", title: "Graph — Phase 4: Topological Sort", color: "#6A1B9A", bg: "#F3E5F5",
+    questions: [
+      { id: "gr4q1", title: "Topological Sort (DFS)",                link: "https://www.geeksforgeeks.org/problems/topological-sort/1",                   important: true,  diff: "M", pattern: "DFS + stack" },
+      { id: "gr4q2", title: "Topological Sort (Kahn's Algorithm)",   link: "https://www.geeksforgeeks.org/problems/topological-sort/1",                   important: true,  diff: "M", pattern: "BFS + indegree array" },
+      { id: "gr4q3", title: "Alien Dictionary",                      link: "https://www.geeksforgeeks.org/problems/alien-dictionary/1",                   important: true,  diff: "H", pattern: "Topological sort on char order" },
+      { id: "gr4q4", title: "Find Eventual Safe States",             link: "https://leetcode.com/problems/find-eventual-safe-states/",                    important: false, diff: "M", pattern: "Reverse graph + topo sort" },
+    ]
+  },
+  {
+    id: "gr5", topic: "graph", title: "Graph — Phase 5: Shortest Path", color: "#E65100", bg: "#FFF3E0",
+    questions: [
+      { id: "gr5q1", title: "Shortest Path in Binary Matrix",            link: "https://leetcode.com/problems/shortest-path-in-binary-matrix/",              important: true,  diff: "M", pattern: "BFS shortest path" },
+      { id: "gr5q2", title: "Word Ladder",                               link: "https://leetcode.com/problems/word-ladder/",                                 important: true,  diff: "H", pattern: "BFS word transformation" },
+      { id: "gr5q3", title: "Network Delay Time",                        link: "https://leetcode.com/problems/network-delay-time/",                           important: true,  diff: "M", pattern: "Dijkstra's algorithm" },
+      { id: "gr5q4", title: "Path With Minimum Effort",                  link: "https://leetcode.com/problems/path-with-minimum-effort/",                     important: false, diff: "M", pattern: "Dijkstra on grid" },
+      { id: "gr5q5", title: "Cheapest Flights Within K Stops",           link: "https://leetcode.com/problems/cheapest-flights-within-k-stops/",              important: true,  diff: "M", pattern: "Modified Dijkstra / Bellman-Ford" },
+      { id: "gr5q6", title: "Minimum Cost to Make at Least One Valid Path", link: "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/", important: false, diff: "H", pattern: "0-1 BFS / Dijkstra" },
+    ]
+  },
+  {
+    id: "gr6", topic: "graph", title: "Graph — Phase 6: Disjoint Set Union (DSU)", color: "#2E7D32", bg: "#E8F5E9",
+    questions: [
+      { id: "gr6q1", title: "Redundant Connection",                             link: "https://leetcode.com/problems/redundant-connection/",                        important: true,  diff: "M", pattern: "Union-Find cycle detection" },
+      { id: "gr6q2", title: "Number of Operations to Make Network Connected",   link: "https://leetcode.com/problems/number-of-operations-to-make-network-connected/", important: false, diff: "M", pattern: "DSU + component count" },
+      { id: "gr6q3", title: "Accounts Merge",                                   link: "https://leetcode.com/problems/accounts-merge/",                              important: true,  diff: "M", pattern: "DSU + email grouping" },
+      { id: "gr6q4", title: "Most Stones Removed with Same Row or Column",      link: "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/", important: false, diff: "M", pattern: "DSU on coordinates" },
+      { id: "gr6q5", title: "Number of Islands II",                              link: "https://leetcode.com/problems/number-of-islands-ii/",                        important: false, diff: "H", pattern: "Online DSU" },
+    ]
+  },
+  {
+    id: "gr7", topic: "graph", title: "Graph — Phase 7: Minimum Spanning Tree", color: "#004D40", bg: "#E0F2F1",
+    questions: [
+      { id: "gr7q1", title: "Kruskal's Algorithm (GFG)",               link: "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1",              important: true,  diff: "M", pattern: "Sort edges + DSU" },
+      { id: "gr7q2", title: "Prim's Algorithm (GFG)",                  link: "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1",              important: true,  diff: "M", pattern: "Priority queue + greedy" },
+      { id: "gr7q3", title: "Min Cost to Connect All Points",          link: "https://leetcode.com/problems/min-cost-to-connect-all-points/",               important: true,  diff: "M", pattern: "Prim's / Kruskal's MST" },
+    ]
+  },
+  {
+    id: "gr8", topic: "graph", title: "Graph — Phase 8: Advanced Graphs (Frequently Asked)", color: "#B71C1C", bg: "#FFEBEE",
+    questions: [
+      { id: "gr8q1", title: "Clone Graph",                             link: "https://leetcode.com/problems/clone-graph/",                                 important: true,  diff: "M", pattern: "BFS / DFS + hashmap clone" },
+      { id: "gr8q2", title: "Reconstruct Itinerary",                   link: "https://leetcode.com/problems/reconstruct-itinerary/",                       important: false, diff: "H", pattern: "Eulerian path (Hierholzer)" },
+      { id: "gr8q3", title: "Critical Connections in a Network",       link: "https://leetcode.com/problems/critical-connections-in-a-network/",            important: true,  diff: "H", pattern: "Tarjan's bridge algorithm" },
+      { id: "gr8q4", title: "Articulation Point (GFG)",                link: "https://www.geeksforgeeks.org/problems/articulation-point2616/1",             important: true,  diff: "H", pattern: "Tarjan's algorithm" },
+      { id: "gr8q5", title: "Strongly Connected Components (Kosaraju)", link: "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1", important: true, diff: "H", pattern: "Kosaraju's two-pass DFS" },
+    ]
+  },
 ];
 
 const TOTAL = ALL_SECTIONS.reduce((s, sec) => s + sec.questions.length, 0);
@@ -522,6 +602,7 @@ const TOPIC_META = {
   bs:     { label: "Binary Search",         emoji: "🔍", accent: "#B45309", bg: "#FEF3C7", border: "#fcd34d" },
   rb:     { label: "Recursion & BT",        emoji: "🔄", accent: "#9D174D", bg: "#FCE7F3", border: "#f9a8d4" },
   dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#1B5E20", bg: "#E8F5E9", border: "#86efac" },
+  graph:  { label: "Graphs",               emoji: "🕸️", accent: "#0D47A1", bg: "#E3F2FD", border: "#90caf9" },
 };
 
 export default function DSATracker() {

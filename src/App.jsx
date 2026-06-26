@@ -1,10 +1,12 @@
 import React from "react";
 import { useAuth } from "./contexts/AuthContext";
+import { useTheme } from "./contexts/ThemeContext";
 import Auth from "./components/Auth";
 import DSATracker from "./DSATracker";
 
 export default function App() {
   const { user, loading, logout } = useAuth();
+  const { isDark, toggleTheme } = useTheme();
 
   /* ── Loading spinner while Firebase checks auth state ── */
   if (loading) {
@@ -31,6 +33,15 @@ export default function App() {
             DSA Tracker
           </span>
           <div className="app-header-right">
+            <button
+              id="theme-toggle-btn"
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              <i className={`ti ti-${isDark ? "sun" : "moon"}`} aria-hidden="true" />
+            </button>
             <span className="app-header-email" title={user.email || user.displayName || ""}>
               {user.email || user.displayName || "User"}
             </span>

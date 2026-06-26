@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "./contexts/AuthContext";
+import { useTheme } from "./contexts/ThemeContext";
 import { getUserProgress, saveUserProgress } from "./services/firestoreService";
 
-const DIFF = {
+const DIFF_LIGHT = {
   E: { label: "Easy",   bg: "#EAF3DE", color: "#3B6D11", border: "#97C459" },
   M: { label: "Medium", bg: "#FAEEDA", color: "#854F0B", border: "#EF9F27" },
   H: { label: "Hard",   bg: "#FCEBEB", color: "#A32D2D", border: "#F09595" },
 };
+
+const DIFF_DARK = {
+  E: { label: "Easy",   bg: "#1a2e0f", color: "#86efac", border: "#22633a" },
+  M: { label: "Medium", bg: "#3d2f0e", color: "#fbbf24", border: "#a16207" },
+  H: { label: "Hard",   bg: "#3b1111", color: "#fca5a5", border: "#991b1b" },
+};
+
+const getDIFF = (isDark) => isDark ? DIFF_DARK : DIFF_LIGHT;
 
 const ALL_SECTIONS = [
   {
@@ -585,7 +594,8 @@ const ALL_SECTIONS = [
 
 const TOTAL = ALL_SECTIONS.reduce((s, sec) => s + sec.questions.length, 0);
 
-function DiffBadge({ d }) {
+function DiffBadge({ d, isDark }) {
+  const DIFF = getDIFF(isDark);
   const { label, bg, color, border } = DIFF[d];
   return (
     <span style={{
@@ -595,7 +605,7 @@ function DiffBadge({ d }) {
   );
 }
 
-const TOPIC_META = {
+const TOPIC_META_LIGHT = {
   arrays: { label: "Arrays & Matrix",       emoji: "🔢", accent: "#185FA5", bg: "#E6F1FB", border: "#93c5fd" },
   sw:     { label: "Sliding Window",        emoji: "🪟", accent: "#0F6E56", bg: "#E1F5EE", border: "#6ee7b7" },
   ps:     { label: "Prefix Sum",            emoji: "➕", accent: "#6D28D9", bg: "#EDE9FE", border: "#c4b5fd" },
@@ -605,8 +615,21 @@ const TOPIC_META = {
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#0D47A1", bg: "#E3F2FD", border: "#90caf9" },
 };
 
+const TOPIC_META_DARK = {
+  arrays: { label: "Arrays & Matrix",       emoji: "🔢", accent: "#60a5fa", bg: "#172554", border: "#1e3a5f" },
+  sw:     { label: "Sliding Window",        emoji: "🪟", accent: "#34d399", bg: "#0d2e22", border: "#14533a" },
+  ps:     { label: "Prefix Sum",            emoji: "➕", accent: "#a78bfa", bg: "#1e1545", border: "#4c1d95" },
+  bs:     { label: "Binary Search",         emoji: "🔍", accent: "#fbbf24", bg: "#3d2f0e", border: "#78350f" },
+  rb:     { label: "Recursion & BT",        emoji: "🔄", accent: "#f472b6", bg: "#3d0f2a", border: "#831843" },
+  dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#4ade80", bg: "#0f2e16", border: "#14532d" },
+  graph:  { label: "Graphs",               emoji: "🕸️", accent: "#60a5fa", bg: "#0d1f3c", border: "#1e3a5f" },
+};
+
+const getTopicMeta = (isDark) => isDark ? TOPIC_META_DARK : TOPIC_META_LIGHT;
+
 export default function DSATracker() {
   const { user } = useAuth();
+  const { isDark } = useTheme();
   const [checked, setChecked]       = useState({});
   const [notes, setNotes]           = useState({});
   const [openNote, setOpenNote]     = useState(null);
@@ -682,6 +705,9 @@ export default function DSATracker() {
 
   if (!loaded) return <div style={{ padding: "2rem", textAlign: "center", color: "var(--color-text-secondary)" }}>Loading...</div>;
 
+  const DIFF = getDIFF(isDark);
+  const TOPIC_META = getTopicMeta(isDark);
+
   return (
     <div style={{ fontFamily: "var(--font-sans)", padding: "1rem 0", maxWidth: 680 }}>
       <h2 className="sr-only">DSA Practice Sheet Tracker</h2>
@@ -692,7 +718,7 @@ export default function DSATracker() {
           <span style={{ fontSize: 13, color: "var(--color-text-secondary)" }}>{doneCount} / {TOTAL} solved</span>
         </div>
         <div style={{ background: "var(--color-background-secondary)", borderRadius: 999, height: 7, overflow: "hidden" }}>
-          <div style={{ width: `${pct}%`, height: "100%", background: "#3B6D11", borderRadius: 999, transition: "width 0.4s" }} />
+          <div style={{ width: `${pct}%`, height: "100%", background: isDark ? "#4ade80" : "#3B6D11", borderRadius: 999, transition: "width 0.4s" }} />
         </div>
         <div style={{ marginTop: 8, display: "flex", gap: 8, flexWrap: "wrap" }}>
           {[ ["E", easy], ["M", med], ["H", hard] ].map(([d, s]) => (
@@ -714,9 +740,9 @@ export default function DSATracker() {
           style={{
             fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
             border: "1.5px solid",
-            borderColor: topicFilter === "all" ? "#374151" : "#d1d5db",
-            background: topicFilter === "all" ? "#111827" : "var(--color-background-primary)",
-            color: topicFilter === "all" ? "#fff" : "var(--color-text-secondary)",
+            borderColor: topicFilter === "all" ? "var(--color-all-topics-border-active)" : "var(--color-filter-inactive-border)",
+            background: topicFilter === "all" ? "var(--color-all-topics-bg-active)" : "var(--color-background-primary)",
+            color: topicFilter === "all" ? "var(--color-all-topics-color-active)" : "var(--color-text-secondary)",
             fontWeight: topicFilter === "all" ? 600 : 400,
           }}
         >📚 All Topics</button>
@@ -727,7 +753,7 @@ export default function DSATracker() {
             style={{
               fontSize: 12, padding: "5px 14px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
               border: "1.5px solid",
-              borderColor: topicFilter === val ? meta.accent : "#d1d5db",
+              borderColor: topicFilter === val ? meta.accent : "var(--color-filter-inactive-border)",
               background: topicFilter === val ? meta.bg : "var(--color-background-primary)",
               color: topicFilter === val ? meta.accent : "var(--color-text-secondary)",
               fontWeight: topicFilter === val ? 700 : 400,
@@ -744,7 +770,7 @@ export default function DSATracker() {
         placeholder="Search questions..."
         value={searchQuery}
         onChange={e => setSearchQuery(e.target.value)}
-        style={{ width: "100%", boxSizing: "border-box", marginBottom: 10, fontSize: 13, height: 34, padding: "0 10px", border: "1.5px solid #bbb", borderRadius: "var(--border-radius-md)", background: "var(--color-background-primary)", color: "var(--color-text-primary)" }}
+        style={{ width: "100%", boxSizing: "border-box", marginBottom: 10, fontSize: 13, height: 34, padding: "0 10px", border: "1.5px solid var(--color-search-border)", borderRadius: "var(--border-radius-md)", background: "var(--color-surface-input)", color: "var(--color-text-primary)" }}
       />
 
       <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap" }}>
@@ -752,7 +778,7 @@ export default function DSATracker() {
           <button key={val} onClick={() => setFilter(val)} style={{
             fontSize: 12, padding: "4px 12px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
             border: "1px solid", transition: "all 0.15s",
-            borderColor: filter === val ? "var(--color-border-info)" : "#ccc",
+            borderColor: filter === val ? "var(--color-border-info)" : "var(--color-filter-inactive-border)",
             background: filter === val ? "var(--color-background-info)" : "var(--color-background-primary)",
             color: filter === val ? "var(--color-text-info)" : "var(--color-text-secondary)",
             fontWeight: filter === val ? 500 : 400
@@ -767,9 +793,9 @@ export default function DSATracker() {
           return (
             <button key={val} onClick={() => setDiffFilter(val)} style={{
               fontSize: 12, padding: "4px 12px", borderRadius: "var(--border-radius-md)", cursor: "pointer",
-              border: `1px solid ${active ? (d ? d.border : "#888") : "#ccc"}`,
-              background: active ? (d ? d.bg : "#eee") : "var(--color-background-primary)",
-              color: active ? (d ? d.color : "#333") : "var(--color-text-secondary)",
+              border: `1px solid ${active ? (d ? d.border : "var(--color-border-tertiary)") : "var(--color-diff-filter-inactive-border)"}`,
+              background: active ? (d ? d.bg : "var(--color-background-secondary)") : "var(--color-background-primary)",
+              color: active ? (d ? d.color : "var(--color-text-primary)") : "var(--color-text-secondary)",
               fontWeight: active ? 500 : 400
             }}>{label}</button>
           );
@@ -825,7 +851,7 @@ export default function DSATracker() {
                 borderLeft: `4px solid ${topicMeta ? topicMeta.accent : sec.color}`,
                 borderRadius: "var(--border-radius-lg)",
                 overflow: "hidden",
-                boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+                boxShadow: "0 1px 4px var(--color-shadow)",
               }}>
                 {/* Section header */}
                 <div
@@ -833,7 +859,7 @@ export default function DSATracker() {
                   style={{
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                     padding: "10px 14px",
-                    background: sec.bg,
+                    background: topicMeta ? topicMeta.bg : sec.bg,
                     cursor: "pointer", userSelect: "none",
                   }}
                 >
@@ -850,7 +876,7 @@ export default function DSATracker() {
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0, marginLeft: 8 }}>
                     {/* Mini progress bar */}
-                    <div style={{ width: 48, height: 5, borderRadius: 99, background: "rgba(0,0,0,0.1)", overflow: "hidden" }}>
+                    <div style={{ width: 48, height: 5, borderRadius: 99, background: "var(--color-progress-track)", overflow: "hidden" }}>
                       <div style={{ width: `${secPct}%`, height: "100%", background: sec.color, borderRadius: 99, transition: "width 0.4s" }} />
                     </div>
                     <span style={{ fontSize: 12, color: sec.color, opacity: 0.9, fontWeight: 500, minWidth: 32, textAlign: "right" }}>{secDone}/{sec.questions.length}</span>
@@ -869,8 +895,8 @@ export default function DSATracker() {
                       onClick={() => toggle(q.id)}
                       style={{
                         width: 22, height: 22, borderRadius: 5, flexShrink: 0, marginTop: 2,
-                        border: checked[q.id] ? `2px solid ${topicMeta ? topicMeta.accent : sec.color}` : "2px solid #d1d5db",
-                        background: checked[q.id] ? (topicMeta ? topicMeta.accent : sec.color) : "#fff",
+                        border: checked[q.id] ? `2px solid ${topicMeta ? topicMeta.accent : sec.color}` : `2px solid var(--color-checkbox-unchecked-border)`,
+                        background: checked[q.id] ? (topicMeta ? topicMeta.accent : sec.color) : "var(--color-checkbox-unchecked-bg)",
                         display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
                         transition: "all 0.15s",
                       }}
@@ -889,19 +915,19 @@ export default function DSATracker() {
                         }}>
                           {q.title}
                         </a>
-                        <DiffBadge d={q.diff} />
+                        <DiffBadge d={q.diff} isDark={isDark} />
                         {q.important && (
                           <span style={{
                             fontSize: 10, padding: "1px 6px", borderRadius: 99,
-                            background: "#FAEEDA", color: "#854F0B", fontWeight: 500, flexShrink: 0,
-                            border: "1px solid #EF9F27"
+                            background: "var(--color-tip-bg)", color: "var(--color-tip-color)", fontWeight: 500, flexShrink: 0,
+                            border: "1px solid var(--color-tip-border)"
                           }}>⭐ IMP</span>
                         )}
                       </div>
 
                       {q.pattern && (
                         <div style={{ marginTop: 4 }}>
-                          <span style={{ fontSize: 10.5, color: topicMeta ? topicMeta.accent : "#534AB7", background: topicMeta ? topicMeta.bg : "#EEEDFE", border: `1px solid ${topicMeta ? topicMeta.border : "#b5b0f5"}`, borderRadius: 4, padding: "1px 7px", fontWeight: 500 }}>
+                          <span style={{ fontSize: 10.5, color: topicMeta ? topicMeta.accent : "var(--color-text-info)", background: topicMeta ? topicMeta.bg : "var(--color-background-info)", border: `1px solid ${topicMeta ? topicMeta.border : "var(--color-border-info)"}`, borderRadius: 4, padding: "1px 7px", fontWeight: 500 }}>
                             ⚙ {q.pattern}
                           </span>
                         </div>
@@ -918,9 +944,9 @@ export default function DSATracker() {
                         style={{
                           marginTop: 5, display: "inline-flex", alignItems: "center", gap: 4,
                           fontSize: 11, padding: "2px 8px", borderRadius: 4, cursor: "pointer",
-                          border: "1px solid #999",
-                          background: notes[q.id] ? "var(--color-background-info)" : "#f0f0f0",
-                          color: notes[q.id] ? "var(--color-text-info)" : "#444",
+                          border: "1px solid var(--color-note-btn-border)",
+                          background: notes[q.id] ? "var(--color-background-info)" : "var(--color-note-btn-bg)",
+                          color: notes[q.id] ? "var(--color-text-info)" : "var(--color-note-btn-color)",
                           fontFamily: "var(--font-sans)"
                         }}
                       >
@@ -943,13 +969,13 @@ export default function DSATracker() {
       )}
 
       {openNote && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(0,0,0,0.4)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+        <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "var(--color-overlay)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
           <div style={{ background: "var(--color-background-primary)", borderRadius: "var(--border-radius-lg)", border: "0.5px solid var(--color-border-secondary)", padding: "1.25rem", width: "100%", maxWidth: 420 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
               <span style={{ fontWeight: 500, fontSize: 14, color: "var(--color-text-primary)" }}>
                 {notes[openNote] ? "Edit Note" : "Add Note"}
               </span>
-              <button onClick={() => setOpenNote(null)} style={{ cursor: "pointer", padding: "2px 6px", borderRadius: 4 }}>
+              <button onClick={() => setOpenNote(null)} style={{ cursor: "pointer", padding: "2px 6px", borderRadius: 4, background: "transparent", border: "1px solid var(--color-border-tertiary)", color: "var(--color-text-secondary)" }}>
                 <i className="ti ti-x" style={{ fontSize: 16 }} aria-hidden="true" />
               </button>
             </div>
@@ -957,11 +983,11 @@ export default function DSATracker() {
               autoFocus value={noteText} onChange={e => setNoteText(e.target.value)}
               placeholder="Write your approach, complexity, key insight..."
               rows={5}
-              style={{ width: "100%", resize: "vertical", fontSize: 13, padding: "8px 10px", borderRadius: "var(--border-radius-md)", border: "1px solid #bbb", background: "var(--color-background-secondary)", color: "var(--color-text-primary)", fontFamily: "var(--font-sans)", boxSizing: "border-box" }}
+              style={{ width: "100%", resize: "vertical", fontSize: 13, padding: "8px 10px", borderRadius: "var(--border-radius-md)", border: "1px solid var(--color-modal-textarea-border)", background: "var(--color-background-secondary)", color: "var(--color-text-primary)", fontFamily: "var(--font-sans)", boxSizing: "border-box" }}
             />
-            <div style={{ marginTop: 8, display: "flex", alignItems: "flex-start", gap: 6, padding: "7px 10px", borderRadius: "var(--border-radius-md)", background: "#FAEEDA", border: "1px solid #EF9F27" }}>
-              <i className="ti ti-bulb" style={{ fontSize: 13, color: "#854F0B", flexShrink: 0, marginTop: 1 }} aria-hidden="true" />
-              <span style={{ fontSize: 11.5, color: "#854F0B", lineHeight: 1.5 }}>
+            <div style={{ marginTop: 8, display: "flex", alignItems: "flex-start", gap: 6, padding: "7px 10px", borderRadius: "var(--border-radius-md)", background: "var(--color-tip-bg)", border: "1px solid var(--color-tip-border)" }}>
+              <i className="ti ti-bulb" style={{ fontSize: 13, color: "var(--color-tip-color)", flexShrink: 0, marginTop: 1 }} aria-hidden="true" />
+              <span style={{ fontSize: 11.5, color: "var(--color-tip-color)", lineHeight: 1.5 }}>
                 Found a similar question on LeetCode, GFG, or Codeforces? Add its name or link here so you can revisit it during revision.
               </span>
             </div>

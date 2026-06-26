@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 /**
  * Inline SVG for the Google "G" logo — no external CDN dependency.
@@ -17,6 +18,7 @@ function GoogleIcon() {
 
 export default function Auth() {
   const { signup, login, googleLogin } = useAuth();
+  const { isDark, toggleTheme } = useTheme();
 
   const [isSignup, setIsSignup] = useState(false);
   const [email, setEmail] = useState("");
@@ -56,7 +58,19 @@ export default function Auth() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page" style={{ position: "relative" }}>
+      {/* Floating theme toggle */}
+      <div className="auth-theme-toggle">
+        <button
+          id="auth-theme-toggle-btn"
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          <i className={`ti ti-${isDark ? "sun" : "moon"}`} aria-hidden="true" />
+        </button>
+      </div>
       <div className="auth-card">
         {/* Header */}
         <div className="auth-header">

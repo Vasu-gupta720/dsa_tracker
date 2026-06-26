@@ -2,7 +2,7 @@
    DSA Tracker — Global Styles
    ================================================================ */
 
-/* ── Design Tokens ── */
+/* ── Design Tokens (Light Mode — default) ── */
 :root {
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --color-text-primary: #0b1220;
@@ -21,6 +21,119 @@
   --color-border-success: #86efac;
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
+
+  /* ── Extended tokens for dark mode parity ── */
+  --color-background-danger: #fef2f2;
+  --color-border-secondary: #d1d5db;
+  --color-surface-hover: #f8f9fa;
+  --color-surface-input: #ffffff;
+  --color-overlay: rgba(0, 0, 0, 0.4);
+  --color-shadow: rgba(0, 0, 0, 0.05);
+  --color-shadow-heavy: rgba(0, 0, 0, 0.08);
+  --color-header-bg: rgba(255, 255, 255, 0.85);
+  --color-auth-page-bg: #fafbfc;
+  --color-auth-card-bg: rgba(255, 255, 255, 0.75);
+  --color-auth-card-border: rgba(0, 0, 0, 0.06);
+  --color-auth-google-border: #dadce0;
+  --color-auth-google-hover-bg: #f8f9fa;
+  --color-auth-google-hover-border: #c0c4c8;
+  --color-auth-divider: #e5e7eb;
+  --color-auth-input-border: #d1d5db;
+  --color-auth-input-focus-ring: rgba(99, 102, 241, 0.12);
+  --color-auth-error-text: #991b1b;
+  --color-auth-error-bg: #fef2f2;
+  --color-auth-error-border: #fecaca;
+  --color-auth-toggle-color: #6366f1;
+  --color-auth-toggle-hover: #4f46e5;
+  --color-logout-hover-bg: #fef2f2;
+  --color-checkbox-unchecked-bg: #ffffff;
+  --color-checkbox-unchecked-border: #d1d5db;
+  --color-note-btn-bg: #f0f0f0;
+  --color-note-btn-color: #444;
+  --color-note-btn-border: #999;
+  --color-search-border: #bbb;
+  --color-tip-bg: #FAEEDA;
+  --color-tip-border: #EF9F27;
+  --color-tip-color: #854F0B;
+  --color-progress-track: rgba(0, 0, 0, 0.1);
+  --color-all-topics-bg-active: #111827;
+  --color-all-topics-color-active: #fff;
+  --color-all-topics-border-active: #374151;
+  --color-filter-inactive-border: #ccc;
+  --color-diff-filter-inactive-border: #ccc;
+  --color-modal-textarea-border: #bbb;
+
+  /* Auth page gradient stops */
+  --auth-gradient-1: rgba(99, 102, 241, 0.08);
+  --auth-gradient-2: rgba(16, 185, 129, 0.08);
+  --auth-gradient-3: rgba(244, 63, 94, 0.06);
+}
+
+/* ── Design Tokens (Dark Mode) ── */
+[data-theme="dark"] {
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #6b7280;
+  --color-text-info: #60a5fa;
+  --color-text-danger: #f87171;
+  --color-text-success: #4ade80;
+  --color-background-primary: #0f1117;
+  --color-background-secondary: #1a1d27;
+  --color-background-info: #172554;
+  --color-background-success: #14352a;
+  --color-border-tertiary: #2d3140;
+  --color-border-info: #3b82f6;
+  --color-border-danger: #ef4444;
+  --color-border-success: #22c55e;
+
+  --color-background-danger: #3b1111;
+  --color-border-secondary: #3d4150;
+  --color-surface-hover: #252836;
+  --color-surface-input: #1a1d27;
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-heavy: rgba(0, 0, 0, 0.4);
+  --color-header-bg: rgba(15, 17, 23, 0.88);
+  --color-auth-page-bg: #0b0d13;
+  --color-auth-card-bg: rgba(26, 29, 39, 0.85);
+  --color-auth-card-border: rgba(255, 255, 255, 0.08);
+  --color-auth-google-border: #3d4150;
+  --color-auth-google-hover-bg: #252836;
+  --color-auth-google-hover-border: #4b5062;
+  --color-auth-divider: #2d3140;
+  --color-auth-input-border: #3d4150;
+  --color-auth-input-focus-ring: rgba(99, 102, 241, 0.25);
+  --color-auth-error-text: #fca5a5;
+  --color-auth-error-bg: #3b1111;
+  --color-auth-error-border: #7f1d1d;
+  --color-auth-toggle-color: #818cf8;
+  --color-auth-toggle-hover: #a5b4fc;
+  --color-logout-hover-bg: #3b1111;
+  --color-checkbox-unchecked-bg: #1a1d27;
+  --color-checkbox-unchecked-border: #4b5062;
+  --color-note-btn-bg: #252836;
+  --color-note-btn-color: #9ca3af;
+  --color-note-btn-border: #4b5062;
+  --color-search-border: #3d4150;
+  --color-tip-bg: #3d2f0e;
+  --color-tip-border: #a16207;
+  --color-tip-color: #fbbf24;
+  --color-progress-track: rgba(255, 255, 255, 0.1);
+  --color-all-topics-bg-active: #e5e7eb;
+  --color-all-topics-color-active: #0f1117;
+  --color-all-topics-border-active: #9ca3af;
+  --color-filter-inactive-border: #3d4150;
+  --color-diff-filter-inactive-border: #3d4150;
+  --color-modal-textarea-border: #3d4150;
+
+  --auth-gradient-1: rgba(99, 102, 241, 0.15);
+  --auth-gradient-2: rgba(16, 185, 129, 0.12);
+  --auth-gradient-3: rgba(244, 63, 94, 0.1);
+}
+
+/* ── Smooth transitions for theme toggle ── */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 *,
@@ -33,9 +146,11 @@ body {
   margin: 0;
   padding: 0;
   background: var(--color-background-primary);
+  color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Screen reader only */
@@ -65,10 +180,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-header-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-tertiary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .app-header-inner {
@@ -122,9 +238,37 @@ body {
 }
 
 .app-logout-btn:hover {
-  background: #fef2f2;
+  background: var(--color-logout-hover-bg);
   border-color: var(--color-border-danger);
   color: var(--color-text-danger);
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-border-info);
+  color: var(--color-text-info);
+  transform: rotate(15deg);
+}
+
+.theme-toggle-btn:active {
+  transform: rotate(0deg) scale(0.92);
 }
 
 /* ── Main Content ── */
@@ -173,25 +317,27 @@ body {
   justify-content: center;
   padding: 20px;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(244, 63, 94, 0.06) 0%, transparent 50%),
-    #fafbfc;
+    radial-gradient(ellipse at 20% 50%, var(--auth-gradient-1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, var(--auth-gradient-2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, var(--auth-gradient-3) 0%, transparent 50%),
+    var(--color-auth-page-bg);
+  transition: background-color 0.3s ease;
 }
 
 .auth-card {
   width: 100%;
   max-width: 400px;
   padding: 36px 32px;
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--color-auth-card-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-auth-card-border);
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.05),
-    0 20px 40px -8px rgba(0, 0, 0, 0.08);
+    0 4px 6px -1px var(--color-shadow),
+    0 20px 40px -8px var(--color-shadow-heavy);
   animation: cardIn 0.4s ease-out;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes cardIn {
@@ -242,6 +388,13 @@ body {
   line-height: 1.5;
 }
 
+/* ── Auth Theme Toggle ── */
+.auth-theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 /* ── Google Button ── */
 .auth-google-btn {
   width: 100%;
@@ -255,16 +408,16 @@ body {
   font-weight: 500;
   color: var(--color-text-primary);
   background: var(--color-background-primary);
-  border: 1.5px solid #dadce0;
+  border: 1.5px solid var(--color-auth-google-border);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .auth-google-btn:hover:not(:disabled) {
-  background: #f8f9fa;
-  border-color: #c0c4c8;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: var(--color-auth-google-hover-bg);
+  border-color: var(--color-auth-google-hover-border);
+  box-shadow: 0 1px 3px var(--color-shadow);
 }
 
 .auth-google-btn:disabled {
@@ -285,7 +438,7 @@ body {
   content: "";
   flex: 1;
   height: 1px;
-  background: #e5e7eb;
+  background: var(--color-auth-divider);
 }
 
 .auth-divider span {
@@ -318,11 +471,11 @@ body {
   font-family: var(--font-sans);
   font-size: 14px;
   color: var(--color-text-primary);
-  background: var(--color-background-primary);
-  border: 1.5px solid #d1d5db;
+  background: var(--color-surface-input);
+  border: 1.5px solid var(--color-auth-input-border);
   border-radius: 8px;
   outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.3s ease;
 }
 
 .auth-input::placeholder {
@@ -331,7 +484,7 @@ body {
 
 .auth-input:focus {
   border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 0 3px var(--color-auth-input-focus-ring);
 }
 
 /* ── Error ── */
@@ -339,9 +492,9 @@ body {
   margin-top: 14px;
   padding: 8px 12px;
   font-size: 13px;
-  color: #991b1b;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  color: var(--color-auth-error-text);
+  background: var(--color-auth-error-bg);
+  border: 1px solid var(--color-auth-error-border);
   border-radius: 8px;
   line-height: 1.4;
 }
@@ -391,7 +544,7 @@ body {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 600;
-  color: #6366f1;
+  color: var(--color-auth-toggle-color);
   cursor: pointer;
   margin-left: 4px;
   padding: 0;
@@ -399,7 +552,7 @@ body {
 }
 
 .auth-toggle-btn:hover {
-  color: #4f46e5;
+  color: var(--color-auth-toggle-hover);
   text-decoration: underline;
 }
 

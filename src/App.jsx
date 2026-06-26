@@ -41,6 +41,7 @@ export default function App() {
               title={isDark ? "Switch to light mode" : "Switch to dark mode"}
             >
               <i className={`ti ti-${isDark ? "sun" : "moon"}`} aria-hidden="true" />
+              <span>{isDark ? "Light Mode" : "Dark Mode"}</span>
             </button>
             <span className="app-header-email" title={user.email || user.displayName || ""}>
               {user.email || user.displayName || "User"}

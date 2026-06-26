@@ -69,6 +69,7 @@ export default function Auth() {
           title={isDark ? "Switch to light mode" : "Switch to dark mode"}
         >
           <i className={`ti ti-${isDark ? "sun" : "moon"}`} aria-hidden="true" />
+          <span>{isDark ? "Light Mode" : "Dark Mode"}</span>
         </button>
       </div>
       <div className="auth-card">

@@ -650,7 +650,7 @@ export default function DSATracker() {
         setChecked(data.checked);
         setNotes(data.notes);
       } catch (err) {
-        // Firestore read failed — start with empty state
+        console.error("Firestore read failed:", err);
       }
       setLoaded(true);
     })();
@@ -662,7 +662,7 @@ export default function DSATracker() {
     try {
       await saveUserProgress(user.uid, nc, nn);
     } catch (err) {
-      // Firestore write failed — data is still updated in local state
+      console.error("Firestore write failed:", err);
     }
   };
 
@@ -909,7 +909,7 @@ export default function DSATracker() {
                         <a href={q.link} target="_blank" rel="noreferrer" style={{
                           fontSize: 13.5,
                           color: checked[q.id] ? "var(--color-text-tertiary)" : "var(--color-text-info)",
-                          textDecoration: checked[q.id] ? "line-through" : "underline",
+                          textDecorationLine: checked[q.id] ? "line-through" : "underline",
                           textUnderlineOffset: 2, textDecorationColor: "var(--color-border-info)",
                           fontWeight: q.important ? 500 : 400,
                         }}>

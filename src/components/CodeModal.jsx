@@ -228,7 +228,7 @@ export default function CodeModal({ question, onClose }) {
           style={{
             pointerEvents: "auto",
             width: "100%", maxWidth: 800,
-            maxHeight: "calc(100vh - 32px)",
+            height: "min(680px, calc(100vh - 32px))",
             display: "flex", flexDirection: "column",
             background: surface,
             borderRadius: 14,
@@ -347,33 +347,35 @@ export default function CodeModal({ question, onClose }) {
 
             {/* Monaco — lazy loaded */}
             <Suspense fallback={null}>
-              <MonacoEditor
-                height="100%"
-                language={monacoLang}
-                value={code}
-                theme={isDark ? "vs-dark" : "light"}
-                onChange={handleCodeChange}
-                onMount={(editor) => { editorRef.current = editor; }}
-                options={{
-                  fontSize: 14,
-                  lineNumbers: "on",
-                  wordWrap: "on",
-                  automaticLayout: true,
-                  minimap: { enabled: false },
-                  scrollBeyondLastLine: false,
-                  padding: { top: 12, bottom: 12 },
-                  tabSize: 4,
-                  formatOnPaste: true,
-                  formatOnType: true,
-                  autoIndent: "full",
-                  fontFamily: "'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace",
-                  fontLigatures: true,
-                  renderLineHighlight: "all",
-                  cursorBlinking: "smooth",
-                  smoothScrolling: true,
-                  readOnly: fetchStatus !== "ready",
-                }}
-              />
+              <div style={{ position: "absolute", inset: 0 }}>
+                <MonacoEditor
+                  height="100%"
+                  language={monacoLang}
+                  value={code}
+                  theme={isDark ? "vs-dark" : "light"}
+                  onChange={handleCodeChange}
+                  onMount={(editor) => { editorRef.current = editor; }}
+                  options={{
+                    fontSize: 14,
+                    lineNumbers: "on",
+                    wordWrap: "on",
+                    automaticLayout: true,
+                    minimap: { enabled: false },
+                    scrollBeyondLastLine: false,
+                    padding: { top: 12, bottom: 12 },
+                    tabSize: 4,
+                    formatOnPaste: true,
+                    formatOnType: true,
+                    autoIndent: "full",
+                    fontFamily: "'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace",
+                    fontLigatures: true,
+                    renderLineHighlight: "all",
+                    cursorBlinking: "smooth",
+                    smoothScrolling: true,
+                    readOnly: fetchStatus !== "ready",
+                  }}
+                />
+              </div>
             </Suspense>
           </div>
 

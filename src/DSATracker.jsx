@@ -590,6 +590,85 @@ const ALL_SECTIONS = [
       { id: "gr8q5", title: "Strongly Connected Components (Kosaraju)", link: "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1", important: true, diff: "H", pattern: "Kosaraju's two-pass DFS" },
     ]
   },
+  {
+    id: "bit1", topic: "bit", title: "Bit Manipulation — Phase 1: Fundamentals", color: "#3B6D11", bg: "#EAF3DE",
+    questions: [
+      { id: "bit1q1",  title: "Single Number (LC 136)",              link: "https://leetcode.com/problems/single-number/",                                              important: false, diff: "E", pattern: "XOR all elements" },
+      { id: "bit1q2",  title: "Number of 1 Bits (LC 191)",           link: "https://leetcode.com/problems/number-of-1-bits/",                                           important: false, diff: "E", pattern: "n & (n-1) loop" },
+      { id: "bit1q3",  title: "Counting Bits (LC 338)",              link: "https://leetcode.com/problems/counting-bits/",                                              important: false, diff: "E", pattern: "DP + popcount" },
+      { id: "bit1q4",  title: "Reverse Bits (LC 190)",               link: "https://leetcode.com/problems/reverse-bits/",                                               important: false, diff: "E", pattern: "Shift + mask" },
+      { id: "bit1q5",  title: "Power of Two (LC 231)",               link: "https://leetcode.com/problems/power-of-two/",                                               important: false, diff: "E", pattern: "n & (n-1) == 0" },
+      { id: "bit1q6",  title: "Power of Four (LC 342)",              link: "https://leetcode.com/problems/power-of-four/",                                              important: false, diff: "E", pattern: "Power of 2 + bit position check" },
+      { id: "bit1q7",  title: "Missing Number (LC 268)",             link: "https://leetcode.com/problems/missing-number/",                                             important: true,  diff: "E", pattern: "XOR index and value" },
+      { id: "bit1q8",  title: "Find First Set Bit (GFG)",            link: "https://www.geeksforgeeks.org/problems/find-first-set-bit-1587115620/1",                   important: false, diff: "E", pattern: "n & (-n)" },
+      { id: "bit1q9",  title: "Check Whether K-th Bit is Set (GFG)", link: "https://www.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not-1587115620/1", important: false, diff: "E", pattern: "(n >> k) & 1" },
+      { id: "bit1q10", title: "Bit Difference (GFG)",                link: "https://www.geeksforgeeks.org/problems/bit-difference-1587115620/1",                      important: false, diff: "E", pattern: "Count set bits in XOR" },
+    ]
+  },
+  {
+    id: "bit2", topic: "bit", title: "Bit Manipulation — Phase 2: XOR Pattern", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "bit2q1", title: "Single Number II (LC 137)",          link: "https://leetcode.com/problems/single-number-ii/",                 important: true,  diff: "M", pattern: "Bitwise count mod 3" },
+      { id: "bit2q2", title: "Single Number III (LC 260)",         link: "https://leetcode.com/problems/single-number-iii/",                important: true,  diff: "M", pattern: "XOR + split by set bit" },
+      { id: "bit2q3", title: "XOR Queries of a Subarray (LC 1310)",link: "https://leetcode.com/problems/xor-queries-of-a-subarray/",       important: true,  diff: "M", pattern: "Prefix XOR" },
+      { id: "bit2q4", title: "Decode XORed Array (LC 1720)",       link: "https://leetcode.com/problems/decode-xored-array/",              important: false, diff: "E", pattern: "Reverse XOR" },
+      { id: "bit2q5", title: "Decode XORed Permutation (LC 1734)", link: "https://leetcode.com/problems/decode-xored-permutation/",        important: true,  diff: "M", pattern: "XOR of all + partial" },
+      { id: "bit2q6", title: "XOR Operation in an Array (LC 1486)",link: "https://leetcode.com/problems/xor-operation-in-an-array/",       important: false, diff: "E", pattern: "Iterate and XOR" },
+      { id: "bit2q7", title: "Maximum XOR for Each Query (LC 1829)",link: "https://leetcode.com/problems/maximum-xor-for-each-query/",     important: true,  diff: "M", pattern: "Prefix XOR + bitmask" },
+    ]
+  },
+  {
+    id: "bit3", topic: "bit", title: "Bit Manipulation — Phase 3: Bitmask Basics", color: "#534AB7", bg: "#EEEDFE",
+    questions: [
+      { id: "bit3q1", title: "Subsets (LC 78)",                        link: "https://leetcode.com/problems/subsets/",                          important: true,  diff: "M", pattern: "Enumerate 2^n masks" },
+      { id: "bit3q2", title: "Gray Code (LC 89)",                      link: "https://leetcode.com/problems/gray-code/",                        important: false, diff: "M", pattern: "i ^ (i >> 1)" },
+      { id: "bit3q3", title: "Binary Watch (LC 401)",                  link: "https://leetcode.com/problems/binary-watch/",                     important: false, diff: "E", pattern: "Count bits <= threshold" },
+      { id: "bit3q4", title: "Letter Case Permutation (LC 784)",       link: "https://leetcode.com/problems/letter-case-permutation/",          important: false, diff: "M", pattern: "Bitmask over letter positions" },
+      { id: "bit3q5", title: "Find Kth Bit in Nth Binary String (LC 1545)",link: "https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/",important: false, diff: "M", pattern: "Recursion + bit flip" },
+    ]
+  },
+  {
+    id: "bit4", topic: "bit", title: "Bit Manipulation — Phase 4: Advanced", color: "#854F0B", bg: "#FAEEDA",
+    questions: [
+      { id: "bit4q1", title: "Maximum Product of Word Lengths (LC 318)",                link: "https://leetcode.com/problems/maximum-product-of-word-lengths/",                 important: true,  diff: "M", pattern: "Bitmask per word char set" },
+      { id: "bit4q2", title: "Maximum XOR of Two Numbers in an Array (LC 421) ⭐",      link: "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",           important: true,  diff: "M", pattern: "Greedy + bitmask / Trie" },
+      { id: "bit4q3", title: "Count Triplets — Equal XOR Arrays (LC 1442)",            link: "https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/",important: true, diff: "M", pattern: "Prefix XOR + math" },
+      { id: "bit4q4", title: "Sum of All Subset XOR Totals (LC 1863)",                 link: "https://leetcode.com/problems/sum-of-all-subset-xor-totals/",                     important: false, diff: "E", pattern: "Contribution per bit" },
+      { id: "bit4q5", title: "Minimize XOR (LC 2429)",                                 link: "https://leetcode.com/problems/minimize-xor/",                                     important: false, diff: "M", pattern: "Greedy bit placement" },
+      { id: "bit4q6", title: "Neighboring Bitwise XOR (LC 2683)",                      link: "https://leetcode.com/problems/neighboring-bitwise-xor/",                          important: false, diff: "M", pattern: "XOR prefix parity" },
+    ]
+  },
+  {
+    id: "bit5", topic: "bit", title: "Bit Manipulation — Phase 5: Bitmask DP", color: "#993C1D", bg: "#FAECE7",
+    questions: [
+      { id: "bit5q1", title: "Can I Win (LC 464)",                         link: "https://leetcode.com/problems/can-i-win/",                          important: false, diff: "M", pattern: "Bitmask DP on state" },
+      { id: "bit5q2", title: "Matchsticks to Square (LC 473)",              link: "https://leetcode.com/problems/matchsticks-to-square/",               important: false, diff: "M", pattern: "Bitmask DP / backtracking" },
+      { id: "bit5q3", title: "Partition to K Equal Sum Subsets (LC 698) ⭐",link: "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",   important: true,  diff: "M", pattern: "Bitmask DP" },
+      { id: "bit5q4", title: "Beautiful Arrangement (LC 526)",              link: "https://leetcode.com/problems/beautiful-arrangement/",               important: false, diff: "M", pattern: "Bitmask DP + permutation" },
+      { id: "bit5q5", title: "Shortest Path Visiting All Nodes (LC 847) ⭐",link: "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",   important: true,  diff: "H", pattern: "BFS + bitmask state" },
+      { id: "bit5q6", title: "Smallest Sufficient Team (LC 1125) ⭐",       link: "https://leetcode.com/problems/smallest-sufficient-team/",            important: true,  diff: "H", pattern: "Bitmask DP on skill set" },
+      { id: "bit5q7", title: "Parallel Courses II (LC 1494)",               link: "https://leetcode.com/problems/parallel-courses-ii/",                 important: false, diff: "H", pattern: "Bitmask DP + topological" },
+      { id: "bit5q8", title: "Stickers to Spell Word (LC 691)",             link: "https://leetcode.com/problems/stickers-to-spell-word/",              important: false, diff: "H", pattern: "Bitmask DP on char coverage" },
+    ]
+  },
+  {
+    id: "bit6", topic: "bit", title: "Bit Manipulation — Phase 6: Trie + XOR", color: "#0F6E56", bg: "#E1F5EE",
+    questions: [
+      { id: "bit6q1", title: "Maximum XOR of Two Numbers in an Array (LC 421)", link: "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",  important: true,  diff: "M", pattern: "Binary Trie" },
+      { id: "bit6q2", title: "Maximum XOR With an Element From Array (LC 1707)",link: "https://leetcode.com/problems/maximum-xor-with-an-element-from-array/", important: true,  diff: "H", pattern: "Offline queries + Trie" },
+      { id: "bit6q3", title: "Count Pairs With XOR in a Range (LC 1803)",       link: "https://leetcode.com/problems/count-pairs-with-xor-in-a-range/",        important: true,  diff: "H", pattern: "Trie + count in range" },
+    ]
+  },
+  {
+    id: "bit7", topic: "bit", title: "Bit Manipulation — Phase 7: Math + Bit", color: "#A32D2D", bg: "#FCEBEB",
+    questions: [
+      { id: "bit7q1", title: "Divide Two Integers (LC 29) ⭐",                                    link: "https://leetcode.com/problems/divide-two-integers/",                                   important: true,  diff: "M", pattern: "Bit-shift based division" },
+      { id: "bit7q2", title: "Bitwise AND of Numbers Range (LC 201) ⭐",                          link: "https://leetcode.com/problems/bitwise-and-of-numbers-range/",                          important: true,  diff: "M", pattern: "Strip lowest differing bits" },
+      { id: "bit7q3", title: "Integer Replacement (LC 397)",                                      link: "https://leetcode.com/problems/integer-replacement/",                                    important: false, diff: "M", pattern: "Greedy on LSB" },
+      { id: "bit7q4", title: "Minimum One Bit Operations to Make Integers Zero (LC 1611)",        link: "https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/",        important: false, diff: "H", pattern: "Gray code recursion" },
+      { id: "bit7q5", title: "Minimum Flips to Make a OR b Equal c (LC 1318)",                   link: "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",                 important: false, diff: "M", pattern: "Check each bit pair" },
+    ]
+  },
 ];
 
 const TOTAL = ALL_SECTIONS.reduce((s, sec) => s + sec.questions.length, 0);
@@ -613,6 +692,7 @@ const TOPIC_META_LIGHT = {
   rb:     { label: "Recursion & BT",        emoji: "🔄", accent: "#9D174D", bg: "#FCE7F3", border: "#f9a8d4" },
   dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#1B5E20", bg: "#E8F5E9", border: "#86efac" },
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#0D47A1", bg: "#E3F2FD", border: "#90caf9" },
+  bit:    { label: "Bit Manipulation",      emoji: "⚡", accent: "#7C3AED", bg: "#F5F3FF", border: "#c4b5fd" },
 };
 
 const TOPIC_META_DARK = {
@@ -623,6 +703,7 @@ const TOPIC_META_DARK = {
   rb:     { label: "Recursion & BT",        emoji: "🔄", accent: "#f472b6", bg: "#3d0f2a", border: "#831843" },
   dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#4ade80", bg: "#0f2e16", border: "#14532d" },
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#60a5fa", bg: "#0d1f3c", border: "#1e3a5f" },
+  bit:    { label: "Bit Manipulation",      emoji: "⚡", accent: "#a78bfa", bg: "#1e0f3c", border: "#4c1d95" },
 };
 
 const getTopicMeta = (isDark) => isDark ? TOPIC_META_DARK : TOPIC_META_LIGHT;

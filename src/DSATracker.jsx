@@ -669,6 +669,119 @@ const ALL_SECTIONS = [
       { id: "bit7q5", title: "Minimum Flips to Make a OR b Equal c (LC 1318)",                   link: "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",                 important: false, diff: "M", pattern: "Check each bit pair" },
     ]
   },
+  {
+    id: "sq1", topic: "sq", title: "Stack & Queue — Phase 1: Fundamentals", color: "#3B6D11", bg: "#EAF3DE",
+    questions: [
+      { id: "sq1q1", title: "Implement Stack using Queues (LC 225)",             link: "https://leetcode.com/problems/implement-stack-using-queues/",            important: false, diff: "E", pattern: "Single queue + rotate" },
+      { id: "sq1q2", title: "Implement Queue using Stacks (LC 232)",             link: "https://leetcode.com/problems/implement-queue-using-stacks/",            important: false, diff: "E", pattern: "Two stacks" },
+      { id: "sq1q3", title: "Valid Parentheses (LC 20) ⭐",                      link: "https://leetcode.com/problems/valid-parentheses/",                      important: true,  diff: "E", pattern: "Stack match open/close" },
+      { id: "sq1q4", title: "Min Stack (LC 155) ⭐",                             link: "https://leetcode.com/problems/min-stack/",                              important: true,  diff: "M", pattern: "Auxiliary min stack" },
+      { id: "sq1q5", title: "Baseball Game (LC 682)",                            link: "https://leetcode.com/problems/baseball-game/",                         important: false, diff: "E", pattern: "Stack simulation" },
+      { id: "sq1q6", title: "Backspace String Compare (LC 844)",                 link: "https://leetcode.com/problems/backspace-string-compare/",               important: false, diff: "E", pattern: "Stack or two-pointer" },
+      { id: "sq1q7", title: "Make The String Great (LC 1544)",                  link: "https://leetcode.com/problems/make-the-string-great/",                  important: false, diff: "E", pattern: "Stack pop on adjacent mismatch" },
+      { id: "sq1q8", title: "Remove All Adjacent Duplicates In String (LC 1047)",link: "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",important: false, diff: "E", pattern: "Stack collapse duplicates" },
+      { id: "sq1q9", title: "Remove Outermost Parentheses (LC 1021)",           link: "https://leetcode.com/problems/remove-outermost-parentheses/",           important: false, diff: "E", pattern: "Depth counter" },
+    ]
+  },
+  {
+    id: "sq2", topic: "sq", title: "Stack & Queue — Phase 2: Monotonic Stack", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "sq2q1", title: "Next Greater Element I (LC 496) ⭐",             link: "https://leetcode.com/problems/next-greater-element-i/",                      important: true,  diff: "E", pattern: "Monotonic stack + hashmap" },
+      { id: "sq2q2", title: "Next Greater Element II (LC 503) ⭐",             link: "https://leetcode.com/problems/next-greater-element-ii/",                     important: true,  diff: "M", pattern: "Monotonic stack + circular array" },
+      { id: "sq2q3", title: "Daily Temperatures (LC 739) ⭐",                  link: "https://leetcode.com/problems/daily-temperatures/",                         important: true,  diff: "M", pattern: "Monotonic decreasing stack" },
+      { id: "sq2q4", title: "Final Prices With Special Discount (LC 1475)",    link: "https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/",important: false, diff: "E", pattern: "Monotonic stack (next smaller)" },
+      { id: "sq2q5", title: "Online Stock Span (LC 901) ⭐",                   link: "https://leetcode.com/problems/online-stock-span/",                          important: true,  diff: "M", pattern: "Monotonic stack + span count" },
+      { id: "sq2q6", title: "Number of Visible People in a Queue (LC 1944)",   link: "https://leetcode.com/problems/number-of-visible-people-in-a-queue/",        important: false, diff: "H", pattern: "Monotonic decreasing stack" },
+      { id: "sq2q7", title: "Steps to Make Array Non-decreasing (LC 2289)",    link: "https://leetcode.com/problems/steps-to-make-array-non-decreasing/",         important: false, diff: "H", pattern: "Monotonic stack + DP" },
+      { id: "sq2q8", title: "Beautiful Towers I (LC 2865)",                    link: "https://leetcode.com/problems/beautiful-towers-i/",                         important: false, diff: "M", pattern: "Monotonic stack prefix/suffix" },
+    ]
+  },
+  {
+    id: "sq3", topic: "sq", title: "Stack & Queue — Phase 3: Histogram Pattern", color: "#534AB7", bg: "#EEEDFE",
+    questions: [
+      { id: "sq3q1", title: "Largest Rectangle in Histogram (LC 84) ⭐⭐⭐",  link: "https://leetcode.com/problems/largest-rectangle-in-histogram/", important: true,  diff: "H", pattern: "Monotonic stack + area" },
+      { id: "sq3q2", title: "Maximal Rectangle (LC 85) ⭐⭐⭐",               link: "https://leetcode.com/problems/maximal-rectangle/",              important: true,  diff: "H", pattern: "LC 84 applied per row" },
+      { id: "sq3q3", title: "Sum of Subarray Minimums (LC 907) ⭐⭐⭐",       link: "https://leetcode.com/problems/sum-of-subarray-minimums/",       important: true,  diff: "M", pattern: "Monotonic stack + contribution" },
+      { id: "sq3q4", title: "Sum of Subarray Ranges (LC 2104) ⭐⭐",          link: "https://leetcode.com/problems/sum-of-subarray-ranges/",         important: true,  diff: "M", pattern: "Max contrib - min contrib" },
+      { id: "sq3q5", title: "Maximum Width Ramp (LC 962)",                    link: "https://leetcode.com/problems/maximum-width-ramp/",             important: false, diff: "M", pattern: "Decreasing stack + reverse scan" },
+    ]
+  },
+  {
+    id: "sq4", topic: "sq", title: "Stack & Queue — Phase 4: Parentheses Problems", color: "#854F0B", bg: "#FAEEDA",
+    questions: [
+      { id: "sq4q1", title: "Generate Parentheses (LC 22)",                    link: "https://leetcode.com/problems/generate-parentheses/",                   important: false, diff: "M", pattern: "Backtracking" },
+      { id: "sq4q2", title: "Longest Valid Parentheses (LC 32) ⭐⭐",           link: "https://leetcode.com/problems/longest-valid-parentheses/",               important: true,  diff: "H", pattern: "Stack indices" },
+      { id: "sq4q3", title: "Minimum Remove to Make Valid Parentheses (LC 1249)",link: "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/",important: true,  diff: "M", pattern: "Stack + mark indices" },
+      { id: "sq4q4", title: "Remove Invalid Parentheses (LC 301) ⭐⭐⭐",       link: "https://leetcode.com/problems/remove-invalid-parentheses/",               important: true,  diff: "H", pattern: "BFS level-by-level" },
+      { id: "sq4q5", title: "Score of Parentheses (LC 856)",                   link: "https://leetcode.com/problems/score-of-parentheses/",                   important: false, diff: "M", pattern: "Stack accumulate score" },
+      { id: "sq4q6", title: "Minimum Add to Make Parentheses Valid (LC 921)",  link: "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/",  important: false, diff: "M", pattern: "Count open/close imbalance" },
+      { id: "sq4q7", title: "Maximum Nesting Depth (LC 1614)",                 link: "https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/",important: false, diff: "E", pattern: "Depth counter" },
+    ]
+  },
+  {
+    id: "sq5", topic: "sq", title: "Stack & Queue — Phase 5: Expression Evaluation", color: "#993C1D", bg: "#FAECE7",
+    questions: [
+      { id: "sq5q1", title: "Evaluate Reverse Polish Notation (LC 150) ⭐", link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/", important: true,  diff: "M", pattern: "Stack operand evaluation" },
+      { id: "sq5q2", title: "Basic Calculator (LC 224) ⭐⭐",                link: "https://leetcode.com/problems/basic-calculator/",                 important: true,  diff: "H", pattern: "Stack + sign tracking" },
+      { id: "sq5q3", title: "Basic Calculator II (LC 227) ⭐⭐",              link: "https://leetcode.com/problems/basic-calculator-ii/",               important: true,  diff: "M", pattern: "Stack + precedence" },
+      { id: "sq5q4", title: "Basic Calculator III (Premium)",               link: "https://leetcode.com/problems/basic-calculator-iii/",              important: false, diff: "H", pattern: "Recursive stack evaluation" },
+    ]
+  },
+  {
+    id: "sq6", topic: "sq", title: "Stack & Queue — Phase 6: Monotonic Queue / Deque", color: "#0F6E56", bg: "#E1F5EE",
+    questions: [
+      { id: "sq6q1", title: "Sliding Window Maximum (LC 239) ⭐⭐⭐",             link: "https://leetcode.com/problems/sliding-window-maximum/",                   important: true,  diff: "H", pattern: "Monotonic deque" },
+      { id: "sq6q2", title: "Shortest Subarray with Sum at Least K (LC 862) ⭐⭐⭐",link: "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",  important: true,  diff: "H", pattern: "Prefix sum + deque" },
+      { id: "sq6q3", title: "Constrained Subsequence Sum (LC 1425)",            link: "https://leetcode.com/problems/constrained-subsequence-sum/",              important: false, diff: "H", pattern: "DP + monotonic deque" },
+      { id: "sq6q4", title: "Jump Game VI (LC 1696)",                           link: "https://leetcode.com/problems/jump-game-vi/",                            important: false, diff: "M", pattern: "DP + deque max window" },
+    ]
+  },
+  {
+    id: "sq7", topic: "sq", title: "Stack & Queue — Phase 7: BFS Queue Pattern", color: "#993556", bg: "#FBEAF0",
+    questions: [
+      { id: "sq7q1", title: "Rotting Oranges (LC 994)",    link: "https://leetcode.com/problems/rotting-oranges/",    important: false, diff: "M", pattern: "Multi-source BFS" },
+      { id: "sq7q2", title: "01 Matrix (LC 542)",           link: "https://leetcode.com/problems/01-matrix/",          important: false, diff: "M", pattern: "Multi-source BFS" },
+      { id: "sq7q3", title: "Open the Lock (LC 752) ⭐",   link: "https://leetcode.com/problems/open-the-lock/",      important: true,  diff: "M", pattern: "BFS state space" },
+      { id: "sq7q4", title: "Perfect Squares (LC 279)",    link: "https://leetcode.com/problems/perfect-squares/",    important: false, diff: "M", pattern: "BFS / DP" },
+      { id: "sq7q5", title: "Walls and Gates (Premium)",   link: "https://leetcode.com/problems/walls-and-gates/",    important: false, diff: "M", pattern: "Multi-source BFS" },
+    ]
+  },
+  {
+    id: "sq8", topic: "sq", title: "Stack & Queue — Phase 8: Design Problems", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "sq8q1", title: "Design Circular Queue (LC 622)",          link: "https://leetcode.com/problems/design-circular-queue/",           important: false, diff: "M", pattern: "Array + head/tail pointers" },
+      { id: "sq8q2", title: "Design Circular Deque (LC 641)",          link: "https://leetcode.com/problems/design-circular-deque/",           important: false, diff: "M", pattern: "Doubly-ended circular buffer" },
+      { id: "sq8q3", title: "Design Front Middle Back Queue (LC 1670)",link: "https://leetcode.com/problems/design-front-middle-back-queue/",  important: false, diff: "M", pattern: "Two deques balanced" },
+      { id: "sq8q4", title: "Design Browser History (LC 1472) ⭐",      link: "https://leetcode.com/problems/design-browser-history/",          important: true,  diff: "M", pattern: "Two stacks / array pointer" },
+      { id: "sq8q5", title: "Dinner Plate Stacks (LC 1172)",           link: "https://leetcode.com/problems/dinner-plate-stacks/",             important: false, diff: "H", pattern: "List of stacks + heap" },
+      { id: "sq8q6", title: "Design Hit Counter (Premium)",            link: "https://leetcode.com/problems/design-hit-counter/",              important: false, diff: "M", pattern: "Queue / circular buffer" },
+    ]
+  },
+  {
+    id: "sq9", topic: "sq", title: "Stack & Queue — Phase 9: Hard Stack Problems", color: "#A32D2D", bg: "#FCEBEB",
+    questions: [
+      { id: "sq9q1", title: "Trapping Rain Water (LC 42) ⭐⭐⭐",     link: "https://leetcode.com/problems/trapping-rain-water/",   important: true,  diff: "H", pattern: "Stack or two-pointer" },
+      { id: "sq9q2", title: "Car Fleet (LC 853) ⭐⭐",                link: "https://leetcode.com/problems/car-fleet/",             important: true,  diff: "M", pattern: "Sort + stack" },
+      { id: "sq9q3", title: "Asteroid Collision (LC 735) ⭐⭐",       link: "https://leetcode.com/problems/asteroid-collision/",    important: true,  diff: "M", pattern: "Stack collision simulation" },
+      { id: "sq9q4", title: "Remove K Digits (LC 402) ⭐⭐",          link: "https://leetcode.com/problems/remove-k-digits/",       important: true,  diff: "M", pattern: "Monotonic stack greedy" },
+      { id: "sq9q5", title: "Remove Duplicate Letters (LC 316) ⭐⭐⭐",link: "https://leetcode.com/problems/remove-duplicate-letters/",important: true,  diff: "M", pattern: "Greedy monotonic stack" },
+      { id: "sq9q6", title: "Create Maximum Number (LC 321)",         link: "https://leetcode.com/problems/create-maximum-number/",  important: false, diff: "H", pattern: "Merge two monotonic stacks" },
+    ]
+  },
+  {
+    id: "sq10", topic: "sq", title: "Stack & Queue — GFG Must-Do Problems", color: "#5F5E5A", bg: "#F1EFE8",
+    questions: [
+      { id: "sq10q1", title: "Next Larger Element (GFG)",                       link: "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1",                 important: true,  diff: "E", pattern: "Monotonic stack" },
+      { id: "sq10q2", title: "Get Minimum Element from Stack (GFG)",            link: "https://www.geeksforgeeks.org/problems/get-minimum-element-from-stack/1",               important: true,  diff: "E", pattern: "Auxiliary min stack" },
+      { id: "sq10q3", title: "Stack using Two Queues (GFG)",                    link: "https://www.geeksforgeeks.org/problems/stack-using-two-queues/1",                       important: false, diff: "E", pattern: "Two queues" },
+      { id: "sq10q4", title: "Queue using Two Stacks (GFG)",                    link: "https://www.geeksforgeeks.org/problems/queue-using-two-stacks/1",                       important: false, diff: "E", pattern: "Lazy reversal" },
+      { id: "sq10q5", title: "Infix to Postfix (GFG)",                          link: "https://www.geeksforgeeks.org/problems/infix-to-postfix-1587115620/1",                 important: true,  diff: "M", pattern: "Stack + operator precedence" },
+      { id: "sq10q6", title: "Evaluation of Postfix Expression (GFG)",          link: "https://www.geeksforgeeks.org/problems/evaluation-of-postfix-expression1735/1",        important: true,  diff: "E", pattern: "Stack operand eval" },
+      { id: "sq10q7", title: "Celebrity Problem (GFG)",                         link: "https://www.geeksforgeeks.org/problems/the-celebrity-problem/1",                       important: true,  diff: "M", pattern: "Stack elimination" },
+      { id: "sq10q8", title: "First Negative Integer in Every Window (GFG)",    link: "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1",important: true, diff: "M", pattern: "Deque sliding window" },
+      { id: "sq10q9", title: "LRU Cache (GFG)",                                 link: "https://www.geeksforgeeks.org/problems/lru-cache/1",                                   important: true,  diff: "H", pattern: "HashMap + doubly linked list" },
+    ]
+  },
 ];
 
 const TOTAL = ALL_SECTIONS.reduce((s, sec) => s + sec.questions.length, 0);
@@ -693,6 +806,7 @@ const TOPIC_META_LIGHT = {
   dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#1B5E20", bg: "#E8F5E9", border: "#86efac" },
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#0D47A1", bg: "#E3F2FD", border: "#90caf9" },
   bit:    { label: "Bit Manipulation",      emoji: "⚡", accent: "#7C3AED", bg: "#F5F3FF", border: "#c4b5fd" },
+  sq:     { label: "Stack & Queue",         emoji: "⚙️", accent: "#B45309", bg: "#FFF7ED", border: "#fed7aa" },
 };
 
 const TOPIC_META_DARK = {
@@ -704,6 +818,7 @@ const TOPIC_META_DARK = {
   dp:     { label: "Dynamic Programming",   emoji: "🧠", accent: "#4ade80", bg: "#0f2e16", border: "#14532d" },
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#60a5fa", bg: "#0d1f3c", border: "#1e3a5f" },
   bit:    { label: "Bit Manipulation",      emoji: "⚡", accent: "#a78bfa", bg: "#1e0f3c", border: "#4c1d95" },
+  sq:     { label: "Stack & Queue",         emoji: "⚙️", accent: "#fb923c", bg: "#3d1c08", border: "#7c2d12" },
 };
 
 const getTopicMeta = (isDark) => isDark ? TOPIC_META_DARK : TOPIC_META_LIGHT;

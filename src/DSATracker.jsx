@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { useAuth } from "./contexts/AuthContext";
 import { useTheme } from "./contexts/ThemeContext";
 import { getUserProgress, saveUserProgress } from "./services/firestoreService";
+
+// Lazy-load CodeModal so Monaco is never on the critical path
+const CodeModal = lazy(() => import("./components/CodeModal"));
 
 const DIFF_LIGHT = {
   E: { label: "Easy",   bg: "#EAF3DE", color: "#3B6D11", border: "#97C459" },
@@ -836,6 +839,7 @@ export default function DSATracker() {
   const [collapsed, setCollapsed]   = useState({});
   const [loaded, setLoaded]         = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [codeModal, setCodeModal]   = useState(null); // question object | null
 
   // Load progress from Firestore on mount
   useEffect(() => {
@@ -1149,6 +1153,23 @@ export default function DSATracker() {
                         <i className={`ti ti-${notes[q.id] ? "pencil" : "notes"}`} style={{ fontSize: 12 }} aria-hidden="true" />
                         {notes[q.id] ? "Edit Note" : "+ Add Note"}
                       </button>
+
+                      {user && (
+                        <button
+                          onClick={() => setCodeModal(q)}
+                          style={{
+                            marginTop: 5, marginLeft: 4, display: "inline-flex", alignItems: "center", gap: 4,
+                            fontSize: 11, padding: "2px 8px", borderRadius: 4, cursor: "pointer",
+                            border: "1px solid var(--color-note-btn-border)",
+                            background: "var(--color-note-btn-bg)",
+                            color: "var(--color-note-btn-color)",
+                            fontFamily: "var(--font-sans)"
+                          }}
+                        >
+                          <span style={{ fontSize: 12 }} aria-hidden="true">💻</span>
+                          Save Code
+                        </button>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -1199,6 +1220,15 @@ export default function DSATracker() {
             </div>
           </div>
         </div>
+      )}
+      {/* ── Code Modal (lazy-loaded, only mounts when a question is selected) ── */}
+      {codeModal && (
+        <Suspense fallback={null}>
+          <CodeModal
+            question={codeModal}
+            onClose={() => setCodeModal(null)}
+          />
+        </Suspense>
       )}
     </div>
   );

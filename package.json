@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "firebase": "^12.13.0",
     "react": "latest",
     "react-dom": "latest"

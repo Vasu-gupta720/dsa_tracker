@@ -785,6 +785,115 @@ const ALL_SECTIONS = [
       { id: "sq10q9", title: "LRU Cache (GFG)",                                 link: "https://www.geeksforgeeks.org/problems/lru-cache/1",                                   important: true,  diff: "H", pattern: "HashMap + doubly linked list" },
     ]
   },
+  {
+    id: "tree1", topic: "tree", title: "Binary Tree — Phase 1: Tree Traversals", color: "#3B6D11", bg: "#EAF3DE",
+    questions: [
+      { id: "tree1q1", title: "Binary Tree Preorder Traversal (LC 144)",            link: "https://leetcode.com/problems/binary-tree-preorder-traversal/",           important: false, diff: "E", pattern: "Stack / recursion" },
+      { id: "tree1q2", title: "Binary Tree Inorder Traversal (LC 94)",              link: "https://leetcode.com/problems/binary-tree-inorder-traversal/",             important: false, diff: "E", pattern: "Stack / recursion" },
+      { id: "tree1q3", title: "Binary Tree Postorder Traversal (LC 145)",           link: "https://leetcode.com/problems/binary-tree-postorder-traversal/",          important: false, diff: "E", pattern: "Stack / recursion" },
+      { id: "tree1q4", title: "Binary Tree Level Order Traversal (LC 102) ⭐",      link: "https://leetcode.com/problems/binary-tree-level-order-traversal/",        important: true,  diff: "M", pattern: "BFS queue, level by level" },
+      { id: "tree1q5", title: "Binary Tree Level Order Traversal II (LC 107)",      link: "https://leetcode.com/problems/binary-tree-level-order-traversal-ii/",     important: false, diff: "M", pattern: "BFS + reverse" },
+      { id: "tree1q6", title: "Average of Levels in Binary Tree (LC 637)",          link: "https://leetcode.com/problems/average-of-levels-in-binary-tree/",         important: false, diff: "E", pattern: "BFS + running average" },
+      { id: "tree1q7", title: "Binary Tree Right Side View (LC 199) ⭐",            link: "https://leetcode.com/problems/binary-tree-right-side-view/",              important: true,  diff: "M", pattern: "BFS last node per level" },
+      { id: "tree1q8", title: "N-ary Tree Level Order Traversal (LC 429)",          link: "https://leetcode.com/problems/n-ary-tree-level-order-traversal/",         important: false, diff: "M", pattern: "BFS with children list" },
+    ]
+  },
+  {
+    id: "tree2", topic: "tree", title: "Binary Tree — Phase 2: Basic DFS", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "tree2q1", title: "Maximum Depth of Binary Tree (LC 104) ⭐",           link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",              important: true,  diff: "E", pattern: "DFS max(left, right) + 1" },
+      { id: "tree2q2", title: "Minimum Depth of Binary Tree (LC 111)",              link: "https://leetcode.com/problems/minimum-depth-of-binary-tree/",              important: false, diff: "E", pattern: "BFS first leaf" },
+      { id: "tree2q3", title: "Same Tree (LC 100)",                                 link: "https://leetcode.com/problems/same-tree/",                                 important: false, diff: "E", pattern: "DFS structural comparison" },
+      { id: "tree2q4", title: "Symmetric Tree (LC 101) ⭐",                         link: "https://leetcode.com/problems/symmetric-tree/",                            important: true,  diff: "E", pattern: "Mirror DFS" },
+      { id: "tree2q5", title: "Invert Binary Tree (LC 226) ⭐",                     link: "https://leetcode.com/problems/invert-binary-tree/",                        important: true,  diff: "E", pattern: "Swap children recursively" },
+      { id: "tree2q6", title: "Balanced Binary Tree (LC 110) ⭐",                   link: "https://leetcode.com/problems/balanced-binary-tree/",                      important: true,  diff: "E", pattern: "Height DFS + early exit" },
+      { id: "tree2q7", title: "Diameter of Binary Tree (LC 543) ⭐⭐⭐",             link: "https://leetcode.com/problems/diameter-of-binary-tree/",                  important: true,  diff: "E", pattern: "Max(left + right) at each node" },
+      { id: "tree2q8", title: "Count Complete Tree Nodes (LC 222)",                 link: "https://leetcode.com/problems/count-complete-tree-nodes/",                 important: false, diff: "E", pattern: "Compare left/right height" },
+    ]
+  },
+  {
+    id: "tree3", topic: "tree", title: "Binary Tree — Phase 3: Path Problems", color: "#534AB7", bg: "#EEEDFE",
+    questions: [
+      { id: "tree3q1", title: "Path Sum (LC 112)",                                  link: "https://leetcode.com/problems/path-sum/",                                  important: false, diff: "E", pattern: "DFS subtract target" },
+      { id: "tree3q2", title: "Path Sum II (LC 113)",                               link: "https://leetcode.com/problems/path-sum-ii/",                               important: false, diff: "M", pattern: "DFS backtrack" },
+      { id: "tree3q3", title: "Path Sum III (LC 437) ⭐⭐⭐",                        link: "https://leetcode.com/problems/path-sum-iii/",                              important: true,  diff: "M", pattern: "Prefix sum + DFS" },
+      { id: "tree3q4", title: "Binary Tree Maximum Path Sum (LC 124) ⭐⭐⭐",         link: "https://leetcode.com/problems/binary-tree-maximum-path-sum/",             important: true,  diff: "H", pattern: "Global max, return single arm" },
+      { id: "tree3q5", title: "Sum Root to Leaf Numbers (LC 129)",                  link: "https://leetcode.com/problems/sum-root-to-leaf-numbers/",                  important: false, diff: "M", pattern: "DFS accumulate digit" },
+      { id: "tree3q6", title: "Pseudo-Palindromic Paths (LC 1457)",                 link: "https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/", important: false, diff: "M", pattern: "Bitmask XOR at leaves" },
+      { id: "tree3q7", title: "Longest ZigZag Path (LC 1372)",                      link: "https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/",      important: false, diff: "M", pattern: "DFS with direction state" },
+    ]
+  },
+  {
+    id: "tree4", topic: "tree", title: "Binary Tree — Phase 4: Lowest Common Ancestor", color: "#854F0B", bg: "#FAEEDA",
+    questions: [
+      { id: "tree4q1", title: "Lowest Common Ancestor of Binary Tree (LC 236) ⭐⭐⭐", link: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",         important: true,  diff: "M", pattern: "Post-order find p or q" },
+      { id: "tree4q2", title: "Lowest Common Ancestor of BST (LC 235)",              link: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",  important: false, diff: "M", pattern: "BST property: go left/right" },
+      { id: "tree4q3", title: "Smallest Common Region",                              link: "https://leetcode.com/problems/smallest-common-region/",                             important: false, diff: "M", pattern: "Parent map + ancestor set" },
+    ]
+  },
+  {
+    id: "tree5", topic: "tree", title: "Binary Tree — Phase 5: Tree Construction", color: "#993C1D", bg: "#FAECE7",
+    questions: [
+      { id: "tree5q1", title: "Construct from Preorder & Inorder (LC 105) ⭐⭐",    link: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",  important: true,  diff: "M", pattern: "Hashmap inorder index + recursion" },
+      { id: "tree5q2", title: "Construct from Inorder & Postorder (LC 106)",       link: "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/", important: false, diff: "M", pattern: "Reverse postorder + inorder split" },
+      { id: "tree5q3", title: "Construct String from Binary Tree (LC 606)",        link: "https://leetcode.com/problems/construct-string-from-binary-tree/",                         important: false, diff: "E", pattern: "Preorder + parentheses" },
+      { id: "tree5q4", title: "Serialize and Deserialize Binary Tree (LC 297) ⭐⭐⭐",link: "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",                    important: true,  diff: "H", pattern: "BFS / preorder with null markers" },
+    ]
+  },
+  {
+    id: "tree6", topic: "tree", title: "Binary Tree — Phase 6: Tree Views", color: "#0F6E56", bg: "#E1F5EE",
+    questions: [
+      { id: "tree6q1", title: "Binary Tree Right Side View (LC 199)",               link: "https://leetcode.com/problems/binary-tree-right-side-view/",              important: true,  diff: "M", pattern: "BFS last per level" },
+      { id: "tree6q2", title: "Vertical Order Traversal (LC 987) ⭐⭐⭐",             link: "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",important: true,  diff: "H", pattern: "BFS with (col, row, val) sort" },
+      { id: "tree6q3", title: "Bottom Left Tree Value (LC 513)",                    link: "https://leetcode.com/problems/find-bottom-left-tree-value/",              important: false, diff: "M", pattern: "BFS row-by-row, first of last" },
+      { id: "tree6q4", title: "Find Largest Value in Each Row (LC 515)",            link: "https://leetcode.com/problems/find-largest-value-in-each-tree-row/",      important: false, diff: "M", pattern: "BFS max per level" },
+      { id: "tree6q5", title: "Top View (GFG)",                                     link: "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1",        important: true,  diff: "M", pattern: "BFS with horizontal distance" },
+      { id: "tree6q6", title: "Bottom View (GFG)",                                  link: "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1",     important: true,  diff: "M", pattern: "BFS with horizontal distance" },
+      { id: "tree6q7", title: "Left View (GFG)",                                    link: "https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1",      important: true,  diff: "E", pattern: "BFS first per level" },
+    ]
+  },
+  {
+    id: "tree7", topic: "tree", title: "Binary Tree — Phase 7: Tree DP", color: "#993556", bg: "#FBEAF0",
+    questions: [
+      { id: "tree7q1", title: "House Robber III (LC 337) ⭐⭐⭐",                   link: "https://leetcode.com/problems/house-robber-iii/",                       important: true,  diff: "M", pattern: "DP (rob, skip) per node" },
+      { id: "tree7q2", title: "Binary Tree Cameras (LC 968) ⭐⭐⭐",                link: "https://leetcode.com/problems/binary-tree-cameras/",                    important: true,  diff: "H", pattern: "Greedy DFS 3-state" },
+      { id: "tree7q3", title: "Distribute Coins in Binary Tree (LC 979) ⭐⭐",      link: "https://leetcode.com/problems/distribute-coins-in-binary-tree/",        important: true,  diff: "M", pattern: "Post-order excess coins" },
+      { id: "tree7q4", title: "Longest Univalue Path (LC 687)",                    link: "https://leetcode.com/problems/longest-univalue-path/",                   important: false, diff: "M", pattern: "DFS match parent value" },
+    ]
+  },
+  {
+    id: "tree8", topic: "tree", title: "Binary Tree — Phase 8: BST Problems", color: "#185FA5", bg: "#E6F1FB",
+    questions: [
+      { id: "tree8q1", title: "Validate BST (LC 98) ⭐⭐⭐",                         link: "https://leetcode.com/problems/validate-binary-search-tree/",            important: true,  diff: "M", pattern: "DFS with min/max bounds" },
+      { id: "tree8q2", title: "Search in BST (LC 700)",                             link: "https://leetcode.com/problems/search-in-a-binary-search-tree/",          important: false, diff: "E", pattern: "Compare and recurse" },
+      { id: "tree8q3", title: "Insert into BST (LC 701)",                           link: "https://leetcode.com/problems/insert-into-a-binary-search-tree/",        important: false, diff: "M", pattern: "Recurse to correct position" },
+      { id: "tree8q4", title: "Delete Node in BST (LC 450) ⭐⭐",                   link: "https://leetcode.com/problems/delete-node-in-a-bst/",                   important: true,  diff: "M", pattern: "Inorder successor swap" },
+      { id: "tree8q5", title: "Kth Smallest in BST (LC 230) ⭐",                   link: "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",           important: true,  diff: "M", pattern: "Inorder traversal count" },
+      { id: "tree8q6", title: "Convert BST to Greater Tree (LC 538)",               link: "https://leetcode.com/problems/convert-bst-to-greater-tree/",             important: false, diff: "M", pattern: "Reverse inorder running sum" },
+      { id: "tree8q7", title: "BST Iterator (LC 173) ⭐⭐",                         link: "https://leetcode.com/problems/binary-search-tree-iterator/",            important: true,  diff: "M", pattern: "Stack-based inorder iteration" },
+      { id: "tree8q8", title: "Recover BST (LC 99) ⭐⭐⭐",                          link: "https://leetcode.com/problems/recover-binary-search-tree/",             important: true,  diff: "H", pattern: "Inorder find two swapped nodes" },
+    ]
+  },
+  {
+    id: "tree9", topic: "tree", title: "Binary Tree — Phase 9: Advanced", color: "#A32D2D", bg: "#FCEBEB",
+    questions: [
+      { id: "tree9q1", title: "Flatten Binary Tree to Linked List (LC 114) ⭐⭐⭐",  link: "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",     important: true,  diff: "M", pattern: "Morris / reverse postorder" },
+      { id: "tree9q2", title: "Populating Next Right Pointers (LC 116)",            link: "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",      important: false, diff: "M", pattern: "BFS / level pointer" },
+      { id: "tree9q3", title: "Populating Next Right Pointers II (LC 117)",         link: "https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/",    important: false, diff: "M", pattern: "BFS general case" },
+      { id: "tree9q4", title: "All Nodes Distance K (LC 863) ⭐⭐",                 link: "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",    important: true,  diff: "M", pattern: "Parent map + BFS" },
+      { id: "tree9q5", title: "Find Duplicate Subtrees (LC 652)",                  link: "https://leetcode.com/problems/find-duplicate-subtrees/",                  important: false, diff: "M", pattern: "Serialize + hashmap" },
+      { id: "tree9q6", title: "Flip Equivalent Binary Trees (LC 951)",              link: "https://leetcode.com/problems/flip-equivalent-binary-trees/",              important: false, diff: "M", pattern: "DFS try both orders" },
+      { id: "tree9q7", title: "Even Odd Tree (LC 1609)",                            link: "https://leetcode.com/problems/even-odd-tree/",                            important: false, diff: "M", pattern: "BFS level parity check" },
+    ]
+  },
+  {
+    id: "tree10", topic: "tree", title: "Binary Tree — Phase 10: Morris Traversal", color: "#5F5E5A", bg: "#F1EFE8",
+    questions: [
+      { id: "tree10q1", title: "Binary Tree Inorder Traversal — Morris",           link: "https://leetcode.com/problems/binary-tree-inorder-traversal/",           important: true,  diff: "M", pattern: "Morris: thread right child" },
+      { id: "tree10q2", title: "Binary Tree Preorder Traversal — Morris",          link: "https://leetcode.com/problems/binary-tree-preorder-traversal/",          important: true,  diff: "M", pattern: "Morris: visit before threading" },
+      { id: "tree10q3", title: "Recover BST — Morris O(1) Space",                  link: "https://leetcode.com/problems/recover-binary-search-tree/",             important: true,  diff: "H", pattern: "Morris inorder find swapped pair" },
+    ]
+  },
 ];
 
 const TOTAL = ALL_SECTIONS.reduce((s, sec) => s + sec.questions.length, 0);
@@ -810,6 +919,7 @@ const TOPIC_META_LIGHT = {
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#0D47A1", bg: "#E3F2FD", border: "#90caf9" },
   bit:    { label: "Bit Manipulation",      emoji: "⚡", accent: "#7C3AED", bg: "#F5F3FF", border: "#c4b5fd" },
   sq:     { label: "Stack & Queue",         emoji: "⚙️", accent: "#B45309", bg: "#FFF7ED", border: "#fed7aa" },
+  tree:   { label: "Binary Tree",           emoji: "🌳", accent: "#166534", bg: "#F0FDF4", border: "#bbf7d0" },
 };
 
 const TOPIC_META_DARK = {
@@ -822,6 +932,7 @@ const TOPIC_META_DARK = {
   graph:  { label: "Graphs",               emoji: "🕸️", accent: "#60a5fa", bg: "#0d1f3c", border: "#1e3a5f" },
   bit:    { label: "Bit Manipulation",      emoji: "⚡", accent: "#a78bfa", bg: "#1e0f3c", border: "#4c1d95" },
   sq:     { label: "Stack & Queue",         emoji: "⚙️", accent: "#fb923c", bg: "#3d1c08", border: "#7c2d12" },
+  tree:   { label: "Binary Tree",           emoji: "🌳", accent: "#4ade80", bg: "#052e16", border: "#14532d" },
 };
 
 const getTopicMeta = (isDark) => isDark ? TOPIC_META_DARK : TOPIC_META_LIGHT;
